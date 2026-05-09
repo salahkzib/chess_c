@@ -144,7 +144,7 @@ void RookPlayedMoves(PtrPiece rook) {
     int* PossibleMoves = RookPossibleMoves(rook);
 }
 
-int* BishoPossibleMoves(PtrPiece bishop) {
+int* BishopPossibleMoves(PtrPiece bishop) {
     int* PossibleMoves;
 
     return PossibleMoves;
