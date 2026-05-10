@@ -4,10 +4,10 @@
 #include "ChessProgram.h"
 
 
-DefaultPiece = { false, 'E', {-1, -1}, 'd', 0 };
+//DefaultPiece = { false, 'E', {-1, -1}, 'd', 0 };
 
 
-EXPORT void Initializing(void)
+void Initializing(void)
 {
     WKing = (Piece){ false, true, 'K', {0, 4}, 'w', 1, 0, 0 };
     WQueen = (Piece){ false, true, 'Q', {0, 3}, 'w', 1, 0, 0 };
@@ -76,9 +76,30 @@ EXPORT void Initializing(void)
     BPlayer.pieces[13] = BPawn6;
     BPlayer.pieces[14] = BPawn7;
     BPlayer.pieces[15] = BPawn8;
+
+    // Initialize board with default pieces
+    for(int i = 0; i < 8; i++) {
+        for(int j = 0; j < 8; j++) {
+            board[i][j] = &DefaultPiece;
+        }
+    }
+    // Place white pieces
+    for(int p = 0; p < 16; p++) {
+        Piece* piece = &WPlayer.pieces[p];
+        if(piece->type != 'E') {
+            board[piece->position[0]][piece->position[1]] = piece;
+        }
+    }
+    // Place black pieces
+    for(int p = 0; p < 16; p++) {
+        Piece* piece = &BPlayer.pieces[p];
+        if(piece->type != 'E') {
+            board[piece->position[0]][piece->position[1]] = piece;
+        }
+    }
 }
 
-int* PawnPossibleMoves(PtrPiece pawn) {
+TupleMoves PawnPossibleMoves(PtrPiece pawn) {
     //possible moves
     //switch board
     //int num = 1, -1 (color pawn s)
@@ -108,73 +129,128 @@ int* PawnPossibleMoves(PtrPiece pawn) {
     iiiiiiii
     */
 
-    int* PossibleMoves;
+    TupleMoves tupleMoves;
 
-    return PossibleMoves;
+    return tupleMoves;
 }
 void PawnPlayedMoves(PtrPiece pawn) {
-    int* PossibleMoves = PawnPossibleMoves(pawn);
+    TupleMoves PossibleMoves = PawnPossibleMoves(pawn);
 
 }
 
-int* KingPossibleMoves(PtrPiece king) {
-    int* PossibleMoves;
+TupleMoves KingPossibleMoves(PtrPiece king) {
+    TupleMoves tupleMoves;
 
-    return PossibleMoves;
+    return tupleMoves;
 }
 void KingPlayedMoves(PtrPiece king) {
-    int* PossibleMoves = KingPossibleMoves(king);
+    TupleMoves PossibleMoves = KingPossibleMoves(king);
 }
 
-int* QueenPossibleMoves(PtrPiece queen) {
-    int* PossibleMoves;
+TupleMoves QueenPossibleMoves(PtrPiece queen) {
+    TupleMoves tupleMoves;
 
-    return PossibleMoves;
+    return tupleMoves;
 }
 void QueenPlayedMoves(PtrPiece queen) {
-    int* PossibleMoves = QueenPossibleMoves(queen);
+    TupleMoves PossibleMoves = QueenPossibleMoves(queen);
 }
 
-int* RookPossibleMoves(PtrPiece rook) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
+TupleMoves RookPossibleMoves(PtrPiece rook) {
+    TupleMoves tupleMoves;
+    int x = rook->position[0];
+    int y = rook->position[1];
+    int directions[4][2] = {{0,1}, {0,-1}, {1,0}, {-1,0}};
+    int possibleMoves[14][2]; 
+    int count = 0;
+    for(int d = 0; d < 4; d++) {
+        int dx = directions[d][0];
+        int dy = directions[d][1];
+        int nx = x + dx;
+        int ny = y + dy;
+        while(nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            possibleMoves[count][0] = nx;
+            possibleMoves[count][1] = ny;
+            count++;
+            nx += dx;
+            ny += dy;
+        }
+    }
+    int **array = (int **)calloc(count, sizeof(int *));
+    for (int i = 0; i < count; i++) {
+        array[i] = (int *)calloc(2, sizeof(int));
+    }
+    for (int i = 0; i < count; i++)
+    {
+        array[i][0] = possibleMoves[i][0];
+        array[i][1] = possibleMoves[i][1];
+    }
+    
+    tupleMoves.length = count;
+    tupleMoves.ArrMoves = array;
+    
+    return tupleMoves;
 }
 void RookPlayedMoves(PtrPiece rook) {
-    int* PossibleMoves = RookPossibleMoves(rook);
+    TupleMoves PossibleMoves = RookPossibleMoves(rook);
 }
 
-int* BishopPossibleMoves(PtrPiece bishop) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
+TupleMoves BishopPossibleMoves(PtrPiece bishop) {//function that calculates the possible moves for a bishop piece on the chess board
+    TupleMoves tupleMoves;
+    int x = bishop->position[0];//x coordinate of the bishop
+    int y = bishop->position[1];//y coordinate of the bishop
+    int directions[4][2] = {{1,1}, {1,-1}, {-1,1}, {-1,-1}};//directions for the bishop to move (diagonal moves)
+    int possibleMoves[14][2];
+    int count = 0;//counter for the number of possible moves
+    for(int d = 0; d < 4; d++) {//for each direction
+        int dx = directions[d][0];//x coordinate change for the current direction
+        int dy = directions[d][1];//y coordinate change for the current direction
+        int nx = x + dx;//x coordinate of the next position
+        int ny = y + dy;//y coordinate of the next position
+        while(nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {//while the next position is within the board
+            possibleMoves[count][0] = nx;//x coordinate of the possible move
+            possibleMoves[count][1] = ny;//y coordinate of the possible move
+            count++;
+            nx += dx;//x coordinate of the next position in the current direction
+            ny += dy;//y coordinate of the next position in the current direction
+        }
+    }
+    int **array = (int **)calloc(count, sizeof(int *));
+    for (int i = 0; i < count; i++) {
+        array[i] = (int *)calloc(2, sizeof(int));
+    }
+    for (int i = 0; i < count; i++)
+    {
+        array[i][0] = possibleMoves[i][0];
+        array[i][1] = possibleMoves[i][1];
+    }
+    
+    tupleMoves.length = count;
+    tupleMoves.ArrMoves = array;
+    return tupleMoves;
 }
 void BishopPlayedMoves(PtrPiece bishop) {
-    int* PossibleMoves = BishoPossibleMoves(bishop);
+    TupleMoves PossibleMoves = BishopPossibleMoves(bishop);
 }
 
-int* NightPossibleMoves(PtrPiece night) {
-    int* PossibleMoves;
+TupleMoves KnightPossibleMoves(PtrPiece knight) {
+    TupleMoves tupleMoves;
 
-    return PossibleMoves;
+    return tupleMoves;
 }
-void NightPlayedMoves(PtrPiece night) {
-    int* PossibleMoves = NightPossibleMoves(night);
+void KnightPlayedMoves(PtrPiece knight) {
+    TupleMoves PossibleMoves = KnightPossibleMoves(knight);
 }
 
 EXPORT TupleMoves MovesToPlay(PtrPiece piece) {
     TupleMoves tupleMoves;
 
-
-
-
-
-    tupleMoves.length = piece->numMoves;
-    tupleMoves.ArrMoves = piece->moves;
     return tupleMoves;
 }
 
 EXPORT void CheckMovePlayed(PtrPiece piece, int move[2]) {
 
 }
+
+
 
