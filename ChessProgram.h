@@ -22,7 +22,7 @@ typedef struct _Player
 
 typedef struct _TupleMoves {
     int length;
-    int* ArrMoves;
+    int **ArrMoves;
 }TupleMoves, * PtrTupleMoves;
 
 Player WPlayer;
@@ -33,18 +33,18 @@ Piece DefaultPiece;
 PtrPiece board[8][8];
 
 EXPORT void Initializing(void);
-int* PawnPossibleMoves(PtrPiece pawn);
+TupleMoves PawnPossibleMoves(PtrPiece pawn);
 void PawnPlayedMoves(PtrPiece pawn);
-int* KingPossibleMoves(PtrPiece king);
+TupleMoves KingPossibleMoves(PtrPiece king);
 void KingPlayedMoves(PtrPiece king);
-int* QueenPossibleMoves(PtrPiece queen);
+TupleMoves QueenPossibleMoves(PtrPiece queen);
 void QueenPlayedMoves(PtrPiece queen);
-int* RookPossibleMoves(PtrPiece rook);
+TupleMoves RookPossibleMoves(PtrPiece rook);
 void RookPlayedMoves(PtrPiece rook);
-int* BishoPossibleMoves(PtrPiece bishop);
+TupleMoves BishopPossibleMoves(PtrPiece bishop);
 void BishopPlayedMoves(PtrPiece bishop);
-int* NightPossibleMoves(PtrPiece night);
-void NightPlayedMoves(PtrPiece night);
+TupleMoves KnightPossibleMoves(PtrPiece knight);
+void KnightPlayedMoves(PtrPiece knight);
 EXPORT TupleMoves MovesToPlay(PtrPiece piece);
 EXPORT void CheckMovePlayed(PtrPiece piece, int move[2]);
 
