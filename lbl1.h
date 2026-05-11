@@ -1,6 +1,5 @@
 #ifndef CHESSPROGRAM_H
 #define CHESSPROGRAM_H
-#include <stdbool.h>
 
 typedef struct
 {
@@ -13,9 +12,9 @@ typedef struct
     int x;
     int y;
 }Obj, *PtrObj;
-Obj thing;
+extern Obj thing;
 
 void Initial();
-tm func(PtrObj something);
+tm func();
 
 #endif
