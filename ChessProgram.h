@@ -1,0 +1,59 @@
+#ifndef CHESSPROGRAM_H
+#define CHESSPROGRAM_H
+#define EXPORT __declspec(dllexport)
+#include <stdbool.h>
+
+typedef struct _Piece {
+    bool isProtected; // protected by another piece or not (true or false)
+    bool ability; // can move or not (true or false)
+    char type; // K, Q, R, B, N, P, E
+    int position[2]; // {y, x}
+    char color; // w, b, d(for default piece)
+    int side; // 1 or -1 or 0(for default piece)
+	int numMoves; // number of moves that can be played by the piece
+    int count; // number of moves played by the piece
+    int moves[27][2]; // the moves that can play
+}Piece, *PtrPiece;
+
+typedef struct{
+    int x;
+    int y;
+}Point;
+typedef struct _Player
+{
+    Piece pieces[16]; // array of the current pieces of the player
+}Player, *PtrPlayer;
+
+typedef struct _TupleMoves {
+    int length;
+    int *InLength;
+    int ***ArrMoves;
+}TupleMoves, *PtrTupleMoves;
+
+Player WPlayer;
+Player BPlayer;
+Piece WKing, WQueen, WRook1, WRook2, WBishop1, WBishop2, WKnight1, WKnight2, WPawn1, WPawn2, WPawn3, WPawn4, WPawn5, WPawn6, WPawn7, WPawn8;
+Piece BKing, BQueen, BRook1, BRook2, BBishop1, BBishop2, BKnight1, BKnight2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8;
+Piece DefaultPiece;
+PtrPiece board[8][8];
+
+EXPORT void Initializing(void);
+int** PawnPossibleMoves(PtrPiece pawn);
+void PawnPlayedMoves(PtrPiece pawn);
+int** KingPossibleMoves(PtrPiece king);
+void KingPlayedMoves(PtrPiece king, int IndexPieceMoved);
+TupleMoves QueenPossibleMoves(PtrPiece queen);
+void QueenPlayedMoves(PtrPiece queen);
+TupleMoves RookPossibleMoves(PtrPiece rook);
+void RookPlayedMoves(PtrPiece rook);
+TupleMoves BishopPossibleMoves(PtrPiece bishop);
+int** BishopPlayedMoves(PtrPiece bishop);
+int** KnightPossibleMoves(PtrPiece knight);
+void KnightPlayedMoves(PtrPiece knight);
+//EXPORT int** MovesToPlay(Point position);
+EXPORT void CheckMovePlayed(PtrPiece piece, int *move);
+EXPORT void FreePointerDg1(int *ptr);
+EXPORT void FreePointerDg2(int **ptr);
+EXPORT void FreePointerDg3(int ***ptr);
+
+#endif
