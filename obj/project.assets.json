@@ -14,11 +14,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\kzibs\\Desktop\\projects\\chess_c\\ChessC\\ChessC\\ChessC.csproj",
+      "projectUniqueName": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessC.csproj",
       "projectName": "ChessC",
-      "projectPath": "C:\\Users\\kzibs\\Desktop\\projects\\chess_c\\ChessC\\ChessC\\ChessC.csproj",
+      "projectPath": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessC.csproj",
       "packagesPath": "C:\\Users\\kzibs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\kzibs\\Desktop\\projects\\chess_c\\ChessC\\ChessC\\obj\\",
+      "outputPath": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -78,7 +78,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.202/PortableRuntimeIdentifierGraph.json",
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\10.0.204/PortableRuntimeIdentifierGraph.json",
         "packagesToPrune": {
           "Microsoft.CSharp": "(,4.7.32767]",
           "Microsoft.VisualBasic": "(,10.4.32767]",

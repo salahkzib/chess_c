@@ -3,25 +3,39 @@
 #include <stdbool.h>
 #include "ChessProgram.h"
 
+/*
 
-DefaultPiece = { false, 'E', {-1, -1}, 'd', 0 };
+indexing
 
+x
+7
+^
+|
+0 ---> 7 y
+*/
 
-EXPORT void Initializing(void)
-{
+Player WPlayer;
+Player BPlayer;
+Piece WKing, WQueen, WRook1, WRook2, WBishop1, WBishop2, WKnight1, WKnight2, WPawn1, WPawn2, WPawn3, WPawn4, WPawn5, WPawn6, WPawn7, WPawn8;
+Piece BKing, BQueen, BRook1, BRook2, BBishop1, BBishop2, BKnight1, BKnight2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8;
+Piece DefaultPiece;
+PtrPiece board[8][8];
+
+void Initializing(void) {
+    DefaultPiece = (Piece){ false, true, 'E', {-1, -1}, 'd', 0, 0, 0 };
     WKing = (Piece){ false, true, 'K', {0, 4}, 'w', 1, 0, 0 };
     WQueen = (Piece){ false, true, 'Q', {0, 3}, 'w', 1, 0, 0 };
     WRook1 = (Piece){ false, true, 'R', {0, 0}, 'w', 1, 0, 0 };
     WRook2 = (Piece){ false, true, 'R', {0, 7}, 'w', 1, 0, 0 };
-    WBishop1 = (Piece){ false, true, 'B', {0, 2}, 'w', 1, 0, 0 };
+    WBishop1 = (Piece){ false, true, 'B', {6, 2}, 'w', 1, 0, 0 };
     WBishop2 = (Piece){ false, true, 'B', {0, 5}, 'w', 1, 0, 0 };
     WKnight1 = (Piece){ false, true, 'N', {0, 1}, 'w', 1, 0, 0 };
     WKnight2 = (Piece){ false, true, 'N', {0, 6}, 'w', 1, 0, 0 };
-    WPawn1 = (Piece){ false, true, 'P', {1, 0}, 'w', 1, 0, 0 };
+    WPawn1 = (Piece){ false, true, 'P', {2, 1}, 'w', 1, 0, 0 };
     WPawn2 = (Piece){ false, true, 'P', {1, 1}, 'w', 1, 0, 0 };
-    WPawn3 = (Piece){ false, true, 'P', {1, 2}, 'w', 1, 0, 0 };
-    WPawn4 = (Piece){ false, true, 'P', {1, 3}, 'w', 1, 0, 0 };
-    WPawn5 = (Piece){ false, true, 'P', {1, 4}, 'w', 1, 0, 0 };
+    WPawn3 = (Piece){ false, true, 'P', {3, 2}, 'w', 1, 0, 0 };
+    WPawn4 = (Piece){ false, true, 'P', {2, 2}, 'w', 1, 0, 0 };
+    WPawn5 = (Piece){ false, true, 'P', {3, 4}, 'w', 1, 0, 0 };
     WPawn6 = (Piece){ false, true, 'P', {1, 5}, 'w', 1, 0, 0 };
     WPawn7 = (Piece){ false, true, 'P', {1, 6}, 'w', 1, 0, 0 };
     WPawn8 = (Piece){ false, true, 'P', {1, 7}, 'w', 1, 0, 0 };
@@ -76,105 +90,469 @@ EXPORT void Initializing(void)
     BPlayer.pieces[13] = BPawn6;
     BPlayer.pieces[14] = BPawn7;
     BPlayer.pieces[15] = BPawn8;
-}
 
-int* PawnPossibleMoves(PtrPiece pawn) {
-    //possible moves
-    //switch board
-    //int num = 1, -1 (color pawn s)
-    /*
-    if(!ability){
-    return NULL
+    for (int i = 0; i < 8; i++) {
+        for (int j = 0; j < 8; j++) {
+            board[i][j] = &DefaultPiece;
+        }
     }
-    int index = pawn.index; //{x, y}
-    side = pawn.Side;
-    x, y;
-    count = pawn.count;
-    l[][] = {{{0, num},true{piece}}, {0, 2*num}//condition count == 0, {1, num}, {-1, num} // condition en passant}
-    List pm[][] = {};
-    int ArrayUsed[2];
-    for(int i = 0; i < 4; i++){
-    ArrayUsed = {l[i][0] + index[0]}
-    if(ArrayUsed >= 0 and < 8 )
-
+    for (int m = 0; m < 16; m++) {
+        PtrPiece piece = &WPlayer.pieces[m];
+        board[piece->position[0]][piece->position[1]] = piece;
     }
-    promoting
-    jjjjjjjj
-
-
-
-
-
-    iiiiiiii
-    */
-
-    int* PossibleMoves;
-
-    return PossibleMoves;
-}
-void PawnPlayedMoves(PtrPiece pawn) {
-    int* PossibleMoves = PawnPossibleMoves(pawn);
-
+    for (int m = 0; m < 16; m++) {
+        PtrPiece piece = &BPlayer.pieces[m];
+        board[piece->position[0]][piece->position[1]] = piece;
+    }
 }
 
-int* KingPossibleMoves(PtrPiece king) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
+int** PawnPossibleMoves(PtrPiece pawn)
+{
+    int PossibleMoves[4][2];
+    int x = pawn->position[0];
+    int y = pawn->position[1];
+    int len = 0;
+    int directions[4][2] = { {1, 0}, {2, 0}, {1, 1}, {1, -1} };
+    int nx, ny;
+    for (int i = 0; i < 4; i++) {
+        nx = x + (directions[i][0] * pawn->side);
+        ny = y + directions[i][1];
+        if (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            PossibleMoves[len][0] = nx;
+            PossibleMoves[len][1] = ny;
+            len++;
+        }
+        else
+        {
+            PossibleMoves[len][0] = -1;
+            PossibleMoves[len][1] = -1;
+            len++;
+        }
+    }
+    int** arr = (int**)calloc(len, sizeof(int*));
+    for (int i = 0; i < len; i++) {
+        arr[i] = (int*)calloc(2, sizeof(int));
+        arr[i][0] = PossibleMoves[i][0];
+        arr[i][1] = PossibleMoves[i][1];
+    }
+    return arr;
 }
-void KingPlayedMoves(PtrPiece king) {
-    int* PossibleMoves = KingPossibleMoves(king);
+void PawnPlayedMoves(PtrPiece pawn)
+{
+    if (pawn->ability) {
+        int** ArrPM = PawnPossibleMoves(pawn);
+        int PossibleMoves[4][2];
+        for (int i = 0; i < 4; i++) {
+            PossibleMoves[i][0] = ArrPM[i][0];
+            PossibleMoves[i][1] = ArrPM[i][1];
+        }
+        for (int o = 0; o < 4; o++) {
+            free(ArrPM[o]);
+        }
+        free(ArrPM);
+        PtrPiece piece;
+        piece = board[PossibleMoves[0][0]][PossibleMoves[0][1]];
+        if (PossibleMoves[0][0] != -1 && piece->type == 'E') {
+            int index = pawn->numMoves++;
+            pawn->moves[index][0] = PossibleMoves[0][0];
+            pawn->moves[index][1] = PossibleMoves[0][1];
+        }
+        piece = board[PossibleMoves[1][0]][PossibleMoves[1][1]];
+        if (PossibleMoves[1][0] != -1 && piece->type == 'E' && piece->count == 0) {
+            int index = pawn->numMoves++;
+            pawn->moves[index][0] = PossibleMoves[1][0];
+            pawn->moves[index][1] = PossibleMoves[1][1];
+        }
+        char OppColor = (pawn->color == 'w') ? 'b' : 'w';
+        piece = board[PossibleMoves[2][0]][PossibleMoves[2][1]];
+        if (PossibleMoves[2][0] != -1 && piece->type == OppColor) {
+            int index = pawn->numMoves++;
+            pawn->moves[index][0] = PossibleMoves[2][0];
+            pawn->moves[index][1] = PossibleMoves[2][1];
+        }
+        piece = board[PossibleMoves[3][0]][PossibleMoves[3][1]];
+        if (PossibleMoves[3][0] != -1 && piece->type == OppColor) {
+            int index = pawn->numMoves++;
+            pawn->moves[index][0] = PossibleMoves[3][0];
+            pawn->moves[index][1] = PossibleMoves[3][1];
+        }
+    }
 }
 
-int* QueenPossibleMoves(PtrPiece queen) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
-}
-void QueenPlayedMoves(PtrPiece queen) {
-    int* PossibleMoves = QueenPossibleMoves(queen);
-}
-
-int* RookPossibleMoves(PtrPiece rook) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
-}
-void RookPlayedMoves(PtrPiece rook) {
-    int* PossibleMoves = RookPossibleMoves(rook);
-}
-
-int* BishoPossibleMoves(PtrPiece bishop) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
+TupleMoves BishopPossibleMoves(PtrPiece bishop, int* PtrInLength, int*** PtrArrMoves) {
+    TupleMoves RPM;
+    int x = bishop->position[0];
+    int y = bishop->position[1];
+    int directions[4][2] = { {1,1}, {1,-1}, {-1,1}, {-1,-1} };
+    int possibleMoves[14][2];
+    int counts[4];
+    int index = 0;
+    int indexArr = 0;
+    RPM.length = 0;
+    for (int d = 0; d < 4; d++) {
+        int dx = directions[d][0];
+        int dy = directions[d][1];
+        int nx = x + dx;
+        int ny = y + dy;
+        counts[index] = 0;
+        while (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            possibleMoves[indexArr][0] = nx;
+            possibleMoves[indexArr][1] = ny;
+            counts[index]++;
+            indexArr++;
+            nx += dx;
+            ny += dy;
+        }
+        if (counts[index] > 0) {
+            index++;
+        }
+    }
+    RPM.length = index;
+    PtrInLength = (int*)calloc(index, sizeof(int));
+    PtrArrMoves = (int***)calloc(index, sizeof(int**));
+    int g = 0;
+    for (int i = 0; i < index; i++) {
+        PtrArrMoves[i] = (int**)calloc(counts[i], sizeof(int*));
+        PtrInLength[i] = counts[i];
+        for (int j = 0; j < counts[i]; j++) {
+            PtrArrMoves[i][j] = (int*)calloc(2, sizeof(int));
+            PtrArrMoves[i][j][0] = possibleMoves[g][0];
+            PtrArrMoves[i][j][1] = possibleMoves[g][1];
+            g++;
+        }
+    }
+    RPM.InLength = PtrInLength;
+    RPM.ArrMoves = PtrArrMoves;
+    return RPM;
 }
 void BishopPlayedMoves(PtrPiece bishop) {
-    int* PossibleMoves = BishoPossibleMoves(bishop);
+    if (bishop->ability) {
+        int* InLength;
+        int*** Arr;
+        TupleMoves PossibleMoves = BishopPossibleMoves(bishop, InLength, Arr);
+        bishop->numMoves = 0;
+        char OppColor = (bishop->color == 'w') ? 'b' : 'w';
+        int x, y, h, index;
+        index = 0;
+        for (int g = 0; g < PossibleMoves.length; g++) {
+            h = 0;
+            x = PossibleMoves.ArrMoves[g][h][0];
+            y = PossibleMoves.ArrMoves[g][h][1];
+            for (int h = 0; h < PossibleMoves.InLength[g]; h++)
+            {
+                x = PossibleMoves.ArrMoves[g][h][0];
+                y = PossibleMoves.ArrMoves[g][h][1];
+                if (board[x][y]->type == 'E') {
+                    index = bishop->numMoves++;
+                    bishop->moves[index][0] = x;
+                    bishop->moves[index][1] = y;
+                }
+                else {
+                    h = PossibleMoves.InLength[g];
+                }
+            }
+            if (board[x][y]->color == OppColor)
+            {
+                index = bishop->numMoves++;
+                bishop->moves[index][0] = x;
+                bishop->moves[index][1] = y;
+            }
+        }
+        for (int v = 0; v < PossibleMoves.length; v++)
+        {
+            for (int w = 0; w < PossibleMoves.InLength[v]; w++)
+            {
+                free(PossibleMoves.ArrMoves[v][w]);
+            }
+            free(PossibleMoves.ArrMoves[v]);
+        }
+        free(PossibleMoves.ArrMoves);
+        free(PossibleMoves.InLength);
+    }
 }
 
-int* NightPossibleMoves(PtrPiece night) {
-    int* PossibleMoves;
-
-    return PossibleMoves;
+/*
+int** KingPossibleMoves(PtrPiece king) {
+    int len = 0;
+    int x = king->position[0];
+    int y = king->position[1];
+    int PossibleMoves[8][2];
+    int directions[8][2] = { {1, 1}, {1, 0}, {1, -1}, {0, -1}, {0, 1}, {-1, 1}, {-1, 0}, {-1, -1} };
+    int nx, ny;
+    for (int i = 0; i < 8; i++) {
+        nx = x + directions[i][0];
+        ny = y + directions[i][1];
+        if (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            PossibleMoves[len][0] = nx;
+            PossibleMoves[len][1] = ny;
+            len++;
+        }
+    }
+    int** arr = (int**)calloc(len, sizeof(int*));
+    for (int i = 0; i < len; i++) {
+        arr[i] = (int*)calloc(2, sizeof(int));
+        arr[i][0] = PossibleMoves[i][0];
+        arr[i][1] = PossibleMoves[i][1];
+    }
+    return arr;
 }
-void NightPlayedMoves(PtrPiece night) {
-    int* PossibleMoves = NightPossibleMoves(night);
+void KingPlayedMoves(PtrPiece king, int IndexPieceMoved) {
+    int len1 = 0;
+    int InitialMoves[8][2];
+    int** PossibleMoves = KingPossibleMoves(king);
+    int x, y, index;
+    for (int i = 0; i < 8; i++) {
+        x = PossibleMoves[i][0];
+        y = PossibleMoves[i][1];
+        if (board[x][y]->color != king->color) {
+            index = king->numMoves++;
+            InitialMoves[index][0] = x;
+            InitialMoves[index][1] = y;
+        }
+    }
+}
+*/
+
+TupleMoves QueenPossibleMoves(PtrPiece queen, int* PtrInLength, int*** PtrArrMoves) {
+    TupleMoves RPM;
+    int x = queen->position[0];
+    int y = queen->position[1];
+    int directions[8][2] = { {0,1}, {0,-1}, {1,0}, {-1,0}, {1,1}, {1,-1}, {-1,1}, {-1,-1} };
+    int possibleMoves[27][2];
+    int counts[8];
+    int index = 0;
+    int indexArr = 0;
+    RPM.length = 0;
+    for (int d = 0; d < 8; d++) {
+        int dx = directions[d][0];
+        int dy = directions[d][1];
+        int nx = x + dx;
+        int ny = y + dy;
+        counts[index] = 0;
+        while (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            possibleMoves[indexArr][0] = nx;
+            possibleMoves[indexArr][1] = ny;
+            counts[index]++;
+            indexArr++;
+            nx += dx;
+            ny += dy;
+        }
+        if (counts[index] > 0) {
+            index++;
+        }
+    }
+    RPM.length = index;
+    PtrInLength = (int*)calloc(index, sizeof(int));
+    PtrArrMoves = (int***)calloc(index, sizeof(int**));
+    int g = 0;
+    for (int i = 0; i < index; i++) {
+        PtrArrMoves[i] = (int**)calloc(counts[i], sizeof(int*));
+        PtrInLength[i] = counts[i];
+        for (int j = 0; j < counts[i]; j++) {
+            PtrArrMoves[i][j] = (int*)calloc(2, sizeof(int));
+            PtrArrMoves[i][j][0] = possibleMoves[g][0];
+            PtrArrMoves[i][j][1] = possibleMoves[g][1];
+            g++;
+        }
+    }
+    RPM.InLength = PtrInLength;
+    RPM.ArrMoves = PtrArrMoves;
+    return RPM;
+}
+void QueenPlayedMoves(PtrPiece queen) {
+    if (queen->ability) {
+        int* InLength;
+        int*** Arr;
+        TupleMoves PossibleMoves = QueenPossibleMoves(queen, InLength, Arr);
+        queen->numMoves = 0;
+        char OppColor = (queen->color == 'w') ? 'b' : 'w';
+        int x, y, h, index;
+        index = 0;
+        for (int g = 0; g < PossibleMoves.length; g++) {
+            for (int h = 0; h < PossibleMoves.InLength[g]; h++)
+            {
+                x = PossibleMoves.ArrMoves[g][h][0];
+                y = PossibleMoves.ArrMoves[g][h][1];
+                if (board[x][y]->type == 'E') {
+                    index = queen->numMoves++;
+                    queen->moves[index][0] = x;
+                    queen->moves[index][1] = y;
+                }
+                else {
+                    h = PossibleMoves.InLength[g];
+                }
+            }
+            if (board[x][y]->color == OppColor)
+            {
+                index = queen->numMoves++;
+                queen->moves[index][0] = x;
+                queen->moves[index][1] = y;
+            }
+        }
+        for (int v = 0; v < PossibleMoves.length; v++)
+        {
+            for (int w = 0; w < PossibleMoves.InLength[v]; w++)
+            {
+                free(PossibleMoves.ArrMoves[v][w]);
+            }
+            free(PossibleMoves.ArrMoves[v]);
+        }
+        free(PossibleMoves.ArrMoves);
+        free(PossibleMoves.InLength);
+    }
+}
+TupleMoves RookPossibleMoves(PtrPiece rook, int* PtrInLength, int*** PtrArrMoves) {
+    TupleMoves RPM;
+    int x = rook->position[0];
+    int y = rook->position[1];
+    int directions[4][2] = { {0,1}, {0,-1}, {1,0}, {-1,0} };
+    int possibleMoves[14][2];
+    int counts[4];
+    int index = 0;
+    int indexArr = 0;
+    RPM.length = 0;
+    for (int d = 0; d < 4; d++) {
+        int dx = directions[d][0];
+        int dy = directions[d][1];
+        int nx = x + dx;
+        int ny = y + dy;
+        counts[index] = 0;
+        while (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            possibleMoves[indexArr][0] = nx;
+            possibleMoves[indexArr][1] = ny;
+            counts[index]++;
+            indexArr++;
+            nx += dx;
+            ny += dy;
+        }
+        if (counts[index] > 0) {
+            index++;
+        }
+    }
+    RPM.length = index;
+    PtrInLength = (int*)calloc(index, sizeof(int));
+    PtrArrMoves = (int***)calloc(index, sizeof(int**));
+    int g = 0;
+    for (int i = 0; i < index; i++) {
+        PtrArrMoves[i] = (int**)calloc(counts[i], sizeof(int*));
+        PtrInLength[i] = counts[i];
+        for (int j = 0; j < counts[i]; j++) {
+            PtrArrMoves[i][j] = (int*)calloc(2, sizeof(int));
+            PtrArrMoves[i][j][0] = possibleMoves[g][0];
+            PtrArrMoves[i][j][1] = possibleMoves[g][1];
+            g++;
+        }
+    }
+    RPM.InLength = PtrInLength;
+    RPM.ArrMoves = PtrArrMoves;
+    return RPM;
+}
+void RookPlayedMoves(PtrPiece rook) {
+    if (rook->ability) {
+        int* InLength;
+        int*** Arr;
+        TupleMoves PossibleMoves = RookPossibleMoves(rook, InLength, Arr);
+        rook->numMoves = 0;
+        char OppColor = (rook->color == 'w') ? 'b' : 'w';
+        int x, y, h, index;
+        index = 0;
+        for (int g = 0; g < PossibleMoves.length; g++) {
+            for (int h = 0; h < PossibleMoves.InLength[g]; h++)
+            {
+                x = PossibleMoves.ArrMoves[g][h][0];
+                y = PossibleMoves.ArrMoves[g][h][1];
+                if (board[x][y]->type == 'E') {
+                    index = rook->numMoves++;
+                    rook->moves[index][0] = x;
+                    rook->moves[index][1] = y;
+                }
+                else {
+                    h = PossibleMoves.InLength[g];
+                }
+            }
+            if (board[x][y]->color == OppColor)
+            {
+                index = rook->numMoves++;
+                rook->moves[index][0] = x;
+                rook->moves[index][1] = y;
+            }
+        }
+        for (int v = 0; v < PossibleMoves.length; v++)
+        {
+            for (int w = 0; w < PossibleMoves.InLength[v]; w++)
+            {
+                free(PossibleMoves.ArrMoves[v][w]);
+            }
+            free(PossibleMoves.ArrMoves[v]);
+        }
+        free(PossibleMoves.ArrMoves);
+        free(PossibleMoves.InLength);
+    }
 }
 
-EXPORT TupleMoves MovesToPlay(PtrPiece piece) {
-    TupleMoves tupleMoves;
 
-
-
-
-
-    tupleMoves.length = piece->numMoves;
-    tupleMoves.ArrMoves = piece->moves;
-    return tupleMoves;
+int** KnightPossibleMoves(PtrPiece knight) {
+    int len = 0;
+    int x = knight->position[0];
+    int y = knight->position[1];
+    int PossibleMoves[8][2];
+    int directions[8][2] = { {2, 1}, {2, -1}, {1, 2}, {-1, 2}, {-2, 1}, {-2, -1}, {-1, -2}, {1, -2} };
+    int nx, ny;
+    for (int i = 0; i < 8; i++) {
+        nx = x + directions[i][0];
+        ny = y + directions[i][1];
+        if (nx >= 0 && nx < 8 && ny >= 0 && ny < 8) {
+            PossibleMoves[len][0] = nx;
+            PossibleMoves[len][1] = ny;
+            len++;
+        }
+    }
+    int** arr = (int**)calloc(len, sizeof(int*));
+    for (int i = 0; i < len; i++) {
+        arr[i] = (int*)calloc(2, sizeof(int));
+        arr[i][0] = PossibleMoves[i][0];
+        arr[i][1] = PossibleMoves[i][1];
+    }
+    return arr;
+}
+void KnightPlayedMoves(PtrPiece knight) {
+    if (knight->ability) {
+        int** ArrPM = KnightPossibleMoves(knight);
+        int PossibleMoves[8][2];
+        for (int i = 0; i < 8; i++) {
+            PossibleMoves[i][0] = ArrPM[i][0];
+            PossibleMoves[i][1] = ArrPM[i][1];
+        }
+        for (int o = 0; o < 8; o++) {
+            free(ArrPM[o]);
+        }
+        free(ArrPM);
+        int len = sizeof(PossibleMoves) / sizeof(PossibleMoves[0]);
+        for (int i = 0; i < len; i++) {
+            int x = PossibleMoves[i][0];
+            int y = PossibleMoves[i][1];
+            char OppColor = (knight->color == 'w') ? 'b' : 'w';
+            if (board[x][y]->type == 'd' || board[x][y]->type == OppColor) {
+                int index = knight->numMoves++;
+                knight->moves[index][0] = x;
+                knight->moves[index][1] = y;
+            }
+        }
+    }
 }
 
-EXPORT void CheckMovePlayed(PtrPiece piece, int move[2]) {
-
+EXPORT int** MovesToPlay(Point position) {
 }
 
+EXPORT void CheckMovePlayed(PtrPiece piece, int* move) {
+}
+
+EXPORT void FreePointerDg1(int* ptr) {
+    free(ptr);
+}
+EXPORT void FreePointerDg2(int** ptr) {
+    free(ptr);
+}
+EXPORT void FreePointerDg3(int*** ptr) {
+    free(ptr);
+}
