@@ -13,6 +13,7 @@ typedef struct _Piece {
     int numMoves; // number of moves that can be played by the piece
     int count; // number of moves played by the piece
     int moves[27][2]; // the moves that can play
+    void* (*function)();
 }Piece, * PtrPiece;
 
 typedef struct {
@@ -38,22 +39,18 @@ extern Piece DefaultPiece;
 extern PtrPiece board[8][8];
 
 EXPORT void Initializing(void);
+bool SafeSquare(int x, int y);
+void CheckIsProtected(PtrPiece piece);
 int** PawnPossibleMoves(PtrPiece pawn);
 void PawnPlayedMoves(PtrPiece pawn);
 TupleMoves BishopPossibleMoves(PtrPiece bishop, int* PtrInLength, int*** PtrArrMoves);
 void BishopPlayedMoves(PtrPiece bishop);
-
-/*
 int** KingPossibleMoves(PtrPiece king);
-void KingPlayedMoves(PtrPiece king, int IndexPieceMoved);
-*/
+void KingPlayedMoves(PtrPiece king);
 TupleMoves QueenPossibleMoves(PtrPiece queen, int* PtrInLength, int*** PtrArrMoves);
 void QueenPlayedMoves(PtrPiece queen);
 TupleMoves RookPossibleMoves(PtrPiece rook, int* PtrInLength, int*** PtrArrMoves);
 void RookPlayedMoves(PtrPiece rook);
-
-
-
 int** KnightPossibleMoves(PtrPiece knight);
 void KnightPlayedMoves(PtrPiece knight);
 EXPORT int** MovesToPlay(Point position);
@@ -61,6 +58,5 @@ EXPORT void CheckMovePlayed(PtrPiece piece, int* move);
 EXPORT void FreePointerDg1(int* ptr);
 EXPORT void FreePointerDg2(int** ptr);
 EXPORT void FreePointerDg3(int*** ptr);
-
 
 #endif
