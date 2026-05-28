@@ -30,102 +30,102 @@ namespace ChessC
         /// </summary>
         private void InitializeComponent()
         {
-            SquareA0 = new Button();
-            SquareA1 = new Button();
-            SquareA2 = new Button();
-            SquareA3 = new Button();
-            SquareA4 = new Button();
-            SquareA5 = new Button();
-            SquareA6 = new Button();
-            SquareA7 = new Button();
-            SquareB0 = new Button();
-            SquareB1 = new Button();
-            SquareB2 = new Button();
-            SquareB3 = new Button();
-            SquareB4 = new Button();
-            SquareB5 = new Button();
-            SquareB6 = new Button();
-            SquareB7 = new Button();
-            SquareC0 = new Button();
-            SquareC1 = new Button();
-            SquareC2 = new Button();
-            SquareC3 = new Button();
-            SquareC4 = new Button();
-            SquareC5 = new Button();
-            SquareC6 = new Button();
-            SquareC7 = new Button();
-            SquareD0 = new Button();
-            SquareD1 = new Button();
-            SquareD2 = new Button();
-            SquareD3 = new Button();
-            SquareD4 = new Button();
-            SquareD5 = new Button();
-            SquareD6 = new Button();
-            SquareD7 = new Button();
-            SquareE0 = new Button();
-            SquareE1 = new Button();
-            SquareE2 = new Button();
-            SquareE3 = new Button();
-            SquareE4 = new Button();
-            SquareE5 = new Button();
-            SquareE6 = new Button();
-            SquareE7 = new Button();
-            SquareF0 = new Button();
-            SquareF1 = new Button();
-            SquareF2 = new Button();
-            SquareF3 = new Button();
-            SquareF4 = new Button();
-            SquareF5 = new Button();
-            SquareF6 = new Button();
-            SquareF7 = new Button();
-            SquareG0 = new Button();
-            SquareG1 = new Button();
-            SquareG2 = new Button();
-            SquareG3 = new Button();
-            SquareG4 = new Button();
-            SquareG5 = new Button();
-            SquareG6 = new Button();
-            SquareG7 = new Button();
-            SquareH0 = new Button();
-            SquareH1 = new Button();
-            SquareH2 = new Button();
-            SquareH3 = new Button();
-            SquareH4 = new Button();
-            SquareH5 = new Button();
-            SquareH6 = new Button();
-            SquareH7 = new Button();
-            WRook1 = new Button();
-            WKnight1 = new Button();
-            WBishop1 = new Button();
-            WQueen = new Button();
-            WKing = new Button();
-            WBishop2 = new Button();
-            WKnight2 = new Button();
-            WRook2 = new Button();
-            WPawn1 = new Button();
-            WPawn2 = new Button();
-            WPawn3 = new Button();
-            WPawn4 = new Button();
-            WPawn5 = new Button();
-            WPawn6 = new Button();
-            WPawn7 = new Button();
-            WPawn8 = new Button();
-            BRook1 = new Button();
-            BKnight1 = new Button();
-            BBishop1 = new Button();
-            BQueen = new Button();
-            BKing = new Button();
-            BBishop2 = new Button();
-            BKnight2 = new Button();
-            BRook2 = new Button();
-            BPawn1 = new Button();
-            BPawn2 = new Button();
-            BPawn3 = new Button();
-            BPawn4 = new Button();
-            BPawn5 = new Button();
-            BPawn6 = new Button();
-            BPawn7 = new Button();
-            BPawn8 = new Button();
+            SquareA0 = new Square();
+            SquareA1 = new Square();
+            SquareA2 = new Square();
+            SquareA3 = new Square();
+            SquareA4 = new Square();
+            SquareA5 = new Square();
+            SquareA6 = new Square();
+            SquareA7 = new Square();
+            SquareB0 = new Square();
+            SquareB1 = new Square();
+            SquareB2 = new Square();
+            SquareB3 = new Square();
+            SquareB4 = new Square();
+            SquareB5 = new Square();
+            SquareB6 = new Square();
+            SquareB7 = new Square();
+            SquareC0 = new Square();
+            SquareC1 = new Square();
+            SquareC2 = new Square();
+            SquareC3 = new Square();
+            SquareC4 = new Square();
+            SquareC5 = new Square();
+            SquareC6 = new Square();
+            SquareC7 = new Square();
+            SquareD0 = new Square();
+            SquareD1 = new Square();
+            SquareD2 = new Square();
+            SquareD3 = new Square();
+            SquareD4 = new Square();
+            SquareD5 = new Square();
+            SquareD6 = new Square();
+            SquareD7 = new Square();
+            SquareE0 = new Square();
+            SquareE1 = new Square();
+            SquareE2 = new Square();
+            SquareE3 = new Square();
+            SquareE4 = new Square();
+            SquareE5 = new Square();
+            SquareE6 = new Square();
+            SquareE7 = new Square();
+            SquareF0 = new Square();
+            SquareF1 = new Square();
+            SquareF2 = new Square();
+            SquareF3 = new Square();
+            SquareF4 = new Square();
+            SquareF5 = new Square();
+            SquareF6 = new Square();
+            SquareF7 = new Square();
+            SquareG0 = new Square();
+            SquareG1 = new Square();
+            SquareG2 = new Square();
+            SquareG3 = new Square();
+            SquareG4 = new Square();
+            SquareG5 = new Square();
+            SquareG6 = new Square();
+            SquareG7 = new Square();
+            SquareH0 = new Square();
+            SquareH1 = new Square();
+            SquareH2 = new Square();
+            SquareH3 = new Square();
+            SquareH4 = new Square();
+            SquareH5 = new Square();
+            SquareH6 = new Square();
+            SquareH7 = new Square();
+            WRook1 = new Piece();
+            WKnight1 = new Piece();
+            WBishop1 = new Piece();
+            WQueen = new Piece();
+            WKing = new Piece();
+            WBishop2 = new Piece();
+            WKnight2 = new Piece();
+            WRook2 = new Piece();
+            WPawn1 = new Piece();
+            WPawn2 = new Piece();
+            WPawn3 = new Piece();
+            WPawn4 = new Piece();
+            WPawn5 = new Piece();
+            WPawn6 = new Piece();
+            WPawn7 = new Piece();
+            WPawn8 = new Piece();
+            BRook1 = new Piece();
+            BKnight1 = new Piece();
+            BBishop1 = new Piece();
+            BQueen = new Piece();
+            BKing = new Piece();
+            BBishop2 = new Piece();
+            BKnight2 = new Piece();
+            BRook2 = new Piece();
+            BPawn1 = new Piece();
+            BPawn2 = new Piece();
+            BPawn3 = new Piece();
+            BPawn4 = new Piece();
+            BPawn5 = new Piece();
+            BPawn6 = new Piece();
+            BPawn7 = new Piece();
+            BPawn8 = new Piece();
             SuspendLayout();
             // 
             // SquareA0
@@ -139,6 +139,7 @@ namespace ChessC
             SquareA0.Size = new Size(70, 70);
             SquareA0.TabIndex = 0;
             SquareA0.UseVisualStyleBackColor = false;
+            SquareA0.Click += Square_Click;
             // 
             // SquareA1
             // 
@@ -151,6 +152,7 @@ namespace ChessC
             SquareA1.Size = new Size(70, 70);
             SquareA1.TabIndex = 0;
             SquareA1.UseVisualStyleBackColor = false;
+            SquareA1.Click += Square_Click;
             // 
             // SquareA2
             // 
@@ -163,6 +165,7 @@ namespace ChessC
             SquareA2.Size = new Size(70, 70);
             SquareA2.TabIndex = 0;
             SquareA2.UseVisualStyleBackColor = false;
+            SquareA2.Click += Square_Click;
             // 
             // SquareA3
             // 
@@ -175,6 +178,7 @@ namespace ChessC
             SquareA3.Size = new Size(70, 70);
             SquareA3.TabIndex = 0;
             SquareA3.UseVisualStyleBackColor = false;
+            SquareA3.Click += Square_Click;
             // 
             // SquareA4
             // 
@@ -187,6 +191,7 @@ namespace ChessC
             SquareA4.Size = new Size(70, 70);
             SquareA4.TabIndex = 0;
             SquareA4.UseVisualStyleBackColor = false;
+            SquareA4.Click += Square_Click;
             // 
             // SquareA5
             // 
@@ -199,6 +204,7 @@ namespace ChessC
             SquareA5.Size = new Size(70, 70);
             SquareA5.TabIndex = 0;
             SquareA5.UseVisualStyleBackColor = false;
+            SquareA5.Click += Square_Click;
             // 
             // SquareA6
             // 
@@ -235,6 +241,7 @@ namespace ChessC
             SquareB0.Size = new Size(70, 70);
             SquareB0.TabIndex = 0;
             SquareB0.UseVisualStyleBackColor = false;
+            SquareB0.Click += Square_Click;
             // 
             // SquareB1
             // 
@@ -247,6 +254,7 @@ namespace ChessC
             SquareB1.Size = new Size(70, 70);
             SquareB1.TabIndex = 0;
             SquareB1.UseVisualStyleBackColor = false;
+            SquareB1.Click += Square_Click;
             // 
             // SquareB2
             // 
@@ -259,6 +267,7 @@ namespace ChessC
             SquareB2.Size = new Size(70, 70);
             SquareB2.TabIndex = 0;
             SquareB2.UseVisualStyleBackColor = false;
+            SquareB2.Click += Square_Click;
             // 
             // SquareB3
             // 
@@ -271,6 +280,7 @@ namespace ChessC
             SquareB3.Size = new Size(70, 70);
             SquareB3.TabIndex = 0;
             SquareB3.UseVisualStyleBackColor = false;
+            SquareB3.Click += Square_Click;
             // 
             // SquareB4
             // 
@@ -283,6 +293,7 @@ namespace ChessC
             SquareB4.Size = new Size(70, 70);
             SquareB4.TabIndex = 0;
             SquareB4.UseVisualStyleBackColor = false;
+            SquareB4.Click += Square_Click;
             // 
             // SquareB5
             // 
@@ -295,6 +306,7 @@ namespace ChessC
             SquareB5.Size = new Size(70, 70);
             SquareB5.TabIndex = 0;
             SquareB5.UseVisualStyleBackColor = false;
+            SquareB5.Click += Square_Click;
             // 
             // SquareB6
             // 
@@ -331,6 +343,7 @@ namespace ChessC
             SquareC0.Size = new Size(70, 70);
             SquareC0.TabIndex = 0;
             SquareC0.UseVisualStyleBackColor = false;
+            SquareC0.Click += Square_Click;
             // 
             // SquareC1
             // 
@@ -343,6 +356,7 @@ namespace ChessC
             SquareC1.Size = new Size(70, 70);
             SquareC1.TabIndex = 0;
             SquareC1.UseVisualStyleBackColor = false;
+            SquareC1.Click += Square_Click;
             // 
             // SquareC2
             // 
@@ -355,6 +369,7 @@ namespace ChessC
             SquareC2.Size = new Size(70, 70);
             SquareC2.TabIndex = 0;
             SquareC2.UseVisualStyleBackColor = false;
+            SquareC2.Click += Square_Click;
             // 
             // SquareC3
             // 
@@ -367,6 +382,7 @@ namespace ChessC
             SquareC3.Size = new Size(70, 70);
             SquareC3.TabIndex = 0;
             SquareC3.UseVisualStyleBackColor = false;
+            SquareC3.Click += Square_Click;
             // 
             // SquareC4
             // 
@@ -379,6 +395,7 @@ namespace ChessC
             SquareC4.Size = new Size(70, 70);
             SquareC4.TabIndex = 0;
             SquareC4.UseVisualStyleBackColor = false;
+            SquareC4.Click += Square_Click;
             // 
             // SquareC5
             // 
@@ -391,6 +408,7 @@ namespace ChessC
             SquareC5.Size = new Size(70, 70);
             SquareC5.TabIndex = 0;
             SquareC5.UseVisualStyleBackColor = false;
+            SquareC5.Click += Square_Click;
             // 
             // SquareC6
             // 
@@ -427,6 +445,7 @@ namespace ChessC
             SquareD0.Size = new Size(70, 70);
             SquareD0.TabIndex = 0;
             SquareD0.UseVisualStyleBackColor = false;
+            SquareD0.Click += Square_Click;
             // 
             // SquareD1
             // 
@@ -439,6 +458,7 @@ namespace ChessC
             SquareD1.Size = new Size(70, 70);
             SquareD1.TabIndex = 0;
             SquareD1.UseVisualStyleBackColor = false;
+            SquareD1.Click += Square_Click;
             // 
             // SquareD2
             // 
@@ -451,6 +471,7 @@ namespace ChessC
             SquareD2.Size = new Size(70, 70);
             SquareD2.TabIndex = 0;
             SquareD2.UseVisualStyleBackColor = false;
+            SquareD2.Click += Square_Click;
             // 
             // SquareD3
             // 
@@ -463,6 +484,7 @@ namespace ChessC
             SquareD3.Size = new Size(70, 70);
             SquareD3.TabIndex = 0;
             SquareD3.UseVisualStyleBackColor = false;
+            SquareD3.Click += Square_Click;
             // 
             // SquareD4
             // 
@@ -475,6 +497,7 @@ namespace ChessC
             SquareD4.Size = new Size(70, 70);
             SquareD4.TabIndex = 0;
             SquareD4.UseVisualStyleBackColor = false;
+            SquareD4.Click += Square_Click;
             // 
             // SquareD5
             // 
@@ -487,6 +510,7 @@ namespace ChessC
             SquareD5.Size = new Size(70, 70);
             SquareD5.TabIndex = 0;
             SquareD5.UseVisualStyleBackColor = false;
+            SquareD5.Click += Square_Click;
             // 
             // SquareD6
             // 
@@ -523,6 +547,7 @@ namespace ChessC
             SquareE0.Size = new Size(70, 70);
             SquareE0.TabIndex = 0;
             SquareE0.UseVisualStyleBackColor = false;
+            SquareE0.Click += Square_Click;
             // 
             // SquareE1
             // 
@@ -535,6 +560,7 @@ namespace ChessC
             SquareE1.Size = new Size(70, 70);
             SquareE1.TabIndex = 0;
             SquareE1.UseVisualStyleBackColor = false;
+            SquareE1.Click += Square_Click;
             // 
             // SquareE2
             // 
@@ -547,6 +573,7 @@ namespace ChessC
             SquareE2.Size = new Size(70, 70);
             SquareE2.TabIndex = 0;
             SquareE2.UseVisualStyleBackColor = false;
+            SquareE2.Click += Square_Click;
             // 
             // SquareE3
             // 
@@ -559,6 +586,7 @@ namespace ChessC
             SquareE3.Size = new Size(70, 70);
             SquareE3.TabIndex = 0;
             SquareE3.UseVisualStyleBackColor = false;
+            SquareE3.Click += Square_Click;
             // 
             // SquareE4
             // 
@@ -571,6 +599,7 @@ namespace ChessC
             SquareE4.Size = new Size(70, 70);
             SquareE4.TabIndex = 0;
             SquareE4.UseVisualStyleBackColor = false;
+            SquareE4.Click += Square_Click;
             // 
             // SquareE5
             // 
@@ -583,6 +612,7 @@ namespace ChessC
             SquareE5.Size = new Size(70, 70);
             SquareE5.TabIndex = 0;
             SquareE5.UseVisualStyleBackColor = false;
+            SquareE5.Click += Square_Click;
             // 
             // SquareE6
             // 
@@ -619,6 +649,7 @@ namespace ChessC
             SquareF0.Size = new Size(70, 70);
             SquareF0.TabIndex = 0;
             SquareF0.UseVisualStyleBackColor = false;
+            SquareF0.Click += Square_Click;
             // 
             // SquareF1
             // 
@@ -631,6 +662,7 @@ namespace ChessC
             SquareF1.Size = new Size(70, 70);
             SquareF1.TabIndex = 0;
             SquareF1.UseVisualStyleBackColor = false;
+            SquareF1.Click += Square_Click;
             // 
             // SquareF2
             // 
@@ -643,6 +675,7 @@ namespace ChessC
             SquareF2.Size = new Size(70, 70);
             SquareF2.TabIndex = 0;
             SquareF2.UseVisualStyleBackColor = false;
+            SquareF2.Click += Square_Click;
             // 
             // SquareF3
             // 
@@ -655,6 +688,7 @@ namespace ChessC
             SquareF3.Size = new Size(70, 70);
             SquareF3.TabIndex = 0;
             SquareF3.UseVisualStyleBackColor = false;
+            SquareF3.Click += Square_Click;
             // 
             // SquareF4
             // 
@@ -667,6 +701,7 @@ namespace ChessC
             SquareF4.Size = new Size(70, 70);
             SquareF4.TabIndex = 0;
             SquareF4.UseVisualStyleBackColor = false;
+            SquareF4.Click += Square_Click;
             // 
             // SquareF5
             // 
@@ -679,6 +714,7 @@ namespace ChessC
             SquareF5.Size = new Size(70, 70);
             SquareF5.TabIndex = 0;
             SquareF5.UseVisualStyleBackColor = false;
+            SquareF5.Click += Square_Click;
             // 
             // SquareF6
             // 
@@ -691,6 +727,7 @@ namespace ChessC
             SquareF6.Size = new Size(70, 70);
             SquareF6.TabIndex = 0;
             SquareF6.UseVisualStyleBackColor = false;
+            SquareF6.Click += Square_Click;
             // 
             // SquareF7
             // 
@@ -715,6 +752,7 @@ namespace ChessC
             SquareG0.Size = new Size(70, 70);
             SquareG0.TabIndex = 0;
             SquareG0.UseVisualStyleBackColor = false;
+            SquareG0.Click += Square_Click;
             // 
             // SquareG1
             // 
@@ -727,6 +765,7 @@ namespace ChessC
             SquareG1.Size = new Size(70, 70);
             SquareG1.TabIndex = 0;
             SquareG1.UseVisualStyleBackColor = false;
+            SquareG1.Click += Square_Click;
             // 
             // SquareG2
             // 
@@ -739,6 +778,7 @@ namespace ChessC
             SquareG2.Size = new Size(70, 70);
             SquareG2.TabIndex = 0;
             SquareG2.UseVisualStyleBackColor = false;
+            SquareG2.Click += Square_Click;
             // 
             // SquareG3
             // 
@@ -751,6 +791,7 @@ namespace ChessC
             SquareG3.Size = new Size(70, 70);
             SquareG3.TabIndex = 0;
             SquareG3.UseVisualStyleBackColor = false;
+            SquareG3.Click += Square_Click;
             // 
             // SquareG4
             // 
@@ -763,6 +804,7 @@ namespace ChessC
             SquareG4.Size = new Size(70, 70);
             SquareG4.TabIndex = 0;
             SquareG4.UseVisualStyleBackColor = false;
+            SquareG4.Click += Square_Click;
             // 
             // SquareG5
             // 
@@ -775,6 +817,7 @@ namespace ChessC
             SquareG5.Size = new Size(70, 70);
             SquareG5.TabIndex = 0;
             SquareG5.UseVisualStyleBackColor = false;
+            SquareG5.Click += Square_Click;
             // 
             // SquareG6
             // 
@@ -811,6 +854,7 @@ namespace ChessC
             SquareH0.Size = new Size(70, 70);
             SquareH0.TabIndex = 0;
             SquareH0.UseVisualStyleBackColor = false;
+            SquareH0.Click += Square_Click;
             // 
             // SquareH1
             // 
@@ -823,6 +867,7 @@ namespace ChessC
             SquareH1.Size = new Size(70, 70);
             SquareH1.TabIndex = 0;
             SquareH1.UseVisualStyleBackColor = false;
+            SquareH1.Click += Square_Click;
             // 
             // SquareH2
             // 
@@ -835,6 +880,7 @@ namespace ChessC
             SquareH2.Size = new Size(70, 70);
             SquareH2.TabIndex = 0;
             SquareH2.UseVisualStyleBackColor = false;
+            SquareH2.Click += Square_Click;
             // 
             // SquareH3
             // 
@@ -847,6 +893,7 @@ namespace ChessC
             SquareH3.Size = new Size(70, 70);
             SquareH3.TabIndex = 0;
             SquareH3.UseVisualStyleBackColor = false;
+            SquareH3.Click += Square_Click;
             // 
             // SquareH4
             // 
@@ -859,6 +906,7 @@ namespace ChessC
             SquareH4.Size = new Size(70, 70);
             SquareH4.TabIndex = 0;
             SquareH4.UseVisualStyleBackColor = false;
+            SquareH4.Click += Square_Click;
             // 
             // SquareH5
             // 
@@ -871,6 +919,7 @@ namespace ChessC
             SquareH5.Size = new Size(70, 70);
             SquareH5.TabIndex = 0;
             SquareH5.UseVisualStyleBackColor = false;
+            SquareH5.Click += Square_Click;
             // 
             // SquareH6
             // 
@@ -907,6 +956,7 @@ namespace ChessC
             WRook1.Size = new Size(70, 70);
             WRook1.TabIndex = 0;
             WRook1.UseVisualStyleBackColor = false;
+            WRook1.Click += Piece_Click;
             // 
             // WKnight1
             // 
@@ -919,6 +969,7 @@ namespace ChessC
             WKnight1.Size = new Size(70, 70);
             WKnight1.TabIndex = 0;
             WKnight1.UseVisualStyleBackColor = false;
+            WKnight1.Click += Piece_Click;
             // 
             // WBishop1
             // 
@@ -931,6 +982,7 @@ namespace ChessC
             WBishop1.Size = new Size(70, 70);
             WBishop1.TabIndex = 0;
             WBishop1.UseVisualStyleBackColor = false;
+            WBishop1.Click += Piece_Click;
             // 
             // WQueen
             // 
@@ -943,6 +995,7 @@ namespace ChessC
             WQueen.Size = new Size(70, 70);
             WQueen.TabIndex = 0;
             WQueen.UseVisualStyleBackColor = false;
+            WQueen.Click += Piece_Click;
             // 
             // WKing
             // 
@@ -955,6 +1008,7 @@ namespace ChessC
             WKing.Size = new Size(70, 70);
             WKing.TabIndex = 0;
             WKing.UseVisualStyleBackColor = false;
+            WKing.Click += Piece_Click;
             // 
             // WBishop2
             // 
@@ -967,6 +1021,7 @@ namespace ChessC
             WBishop2.Size = new Size(70, 70);
             WBishop2.TabIndex = 0;
             WBishop2.UseVisualStyleBackColor = false;
+            WBishop2.Click += Piece_Click;
             // 
             // WKnight2
             // 
@@ -979,6 +1034,7 @@ namespace ChessC
             WKnight2.Size = new Size(70, 70);
             WKnight2.TabIndex = 0;
             WKnight2.UseVisualStyleBackColor = false;
+            WKnight2.Click += Piece_Click;
             // 
             // WRook2
             // 
@@ -991,6 +1047,7 @@ namespace ChessC
             WRook2.Size = new Size(70, 70);
             WRook2.TabIndex = 0;
             WRook2.UseVisualStyleBackColor = false;
+            WRook2.Click += Piece_Click;
             // 
             // WPawn1
             // 
@@ -998,11 +1055,12 @@ namespace ChessC
             WPawn1.FlatStyle = FlatStyle.Flat;
             WPawn1.ForeColor = Color.Transparent;
             WPawn1.Image = Properties.Resources.wpawn;
-            WPawn1.Location = new Point(250, 530);
+            WPawn1.Location = new Point(460, 530);
             WPawn1.Name = "WPawn1";
             WPawn1.Size = new Size(70, 70);
             WPawn1.TabIndex = 0;
             WPawn1.UseVisualStyleBackColor = false;
+            WPawn1.Click += Piece_Click;
             // 
             // WPawn2
             // 
@@ -1010,11 +1068,12 @@ namespace ChessC
             WPawn2.FlatStyle = FlatStyle.Flat;
             WPawn2.ForeColor = Color.Transparent;
             WPawn2.Image = Properties.Resources.wpawn;
-            WPawn2.Location = new Point(320, 530);
+            WPawn2.Location = new Point(390, 530);
             WPawn2.Name = "WPawn2";
             WPawn2.Size = new Size(70, 70);
             WPawn2.TabIndex = 0;
             WPawn2.UseVisualStyleBackColor = false;
+            WPawn2.Click += Piece_Click;
             // 
             // WPawn3
             // 
@@ -1022,11 +1081,12 @@ namespace ChessC
             WPawn3.FlatStyle = FlatStyle.Flat;
             WPawn3.ForeColor = Color.Transparent;
             WPawn3.Image = Properties.Resources.wpawn;
-            WPawn3.Location = new Point(390, 530);
+            WPawn3.Location = new Point(320, 530);
             WPawn3.Name = "WPawn3";
             WPawn3.Size = new Size(70, 70);
             WPawn3.TabIndex = 0;
             WPawn3.UseVisualStyleBackColor = false;
+            WPawn3.Click += Piece_Click;
             // 
             // WPawn4
             // 
@@ -1034,11 +1094,12 @@ namespace ChessC
             WPawn4.FlatStyle = FlatStyle.Flat;
             WPawn4.ForeColor = Color.Transparent;
             WPawn4.Image = Properties.Resources.wpawn;
-            WPawn4.Location = new Point(460, 530);
+            WPawn4.Location = new Point(740, 530);
             WPawn4.Name = "WPawn4";
             WPawn4.Size = new Size(70, 70);
             WPawn4.TabIndex = 0;
             WPawn4.UseVisualStyleBackColor = false;
+            WPawn4.Click += Piece_Click;
             // 
             // WPawn5
             // 
@@ -1046,11 +1107,12 @@ namespace ChessC
             WPawn5.FlatStyle = FlatStyle.Flat;
             WPawn5.ForeColor = Color.Transparent;
             WPawn5.Image = Properties.Resources.wpawn;
-            WPawn5.Location = new Point(530, 530);
+            WPawn5.Location = new Point(250, 530);
             WPawn5.Name = "WPawn5";
             WPawn5.Size = new Size(70, 70);
             WPawn5.TabIndex = 0;
             WPawn5.UseVisualStyleBackColor = false;
+            WPawn5.Click += Piece_Click;
             // 
             // WPawn6
             // 
@@ -1058,11 +1120,12 @@ namespace ChessC
             WPawn6.FlatStyle = FlatStyle.Flat;
             WPawn6.ForeColor = Color.Transparent;
             WPawn6.Image = Properties.Resources.wpawn;
-            WPawn6.Location = new Point(600, 530);
+            WPawn6.Location = new Point(530, 530);
             WPawn6.Name = "WPawn6";
             WPawn6.Size = new Size(70, 70);
             WPawn6.TabIndex = 0;
             WPawn6.UseVisualStyleBackColor = false;
+            WPawn6.Click += Piece_Click;
             // 
             // WPawn7
             // 
@@ -1070,11 +1133,12 @@ namespace ChessC
             WPawn7.FlatStyle = FlatStyle.Flat;
             WPawn7.ForeColor = Color.Transparent;
             WPawn7.Image = Properties.Resources.wpawn;
-            WPawn7.Location = new Point(670, 530);
+            WPawn7.Location = new Point(600, 530);
             WPawn7.Name = "WPawn7";
             WPawn7.Size = new Size(70, 70);
             WPawn7.TabIndex = 0;
             WPawn7.UseVisualStyleBackColor = false;
+            WPawn7.Click += Piece_Click;
             // 
             // WPawn8
             // 
@@ -1082,11 +1146,12 @@ namespace ChessC
             WPawn8.FlatStyle = FlatStyle.Flat;
             WPawn8.ForeColor = Color.Transparent;
             WPawn8.Image = Properties.Resources.wpawn;
-            WPawn8.Location = new Point(740, 530);
+            WPawn8.Location = new Point(670, 530);
             WPawn8.Name = "WPawn8";
             WPawn8.Size = new Size(70, 70);
             WPawn8.TabIndex = 0;
             WPawn8.UseVisualStyleBackColor = false;
+            WPawn8.Click += Piece_Click;
             // 
             // BRook1
             // 
@@ -1099,6 +1164,7 @@ namespace ChessC
             BRook1.Size = new Size(70, 70);
             BRook1.TabIndex = 0;
             BRook1.UseVisualStyleBackColor = false;
+            BRook1.Click += Piece_Click;
             // 
             // BKnight1
             // 
@@ -1111,6 +1177,7 @@ namespace ChessC
             BKnight1.Size = new Size(70, 70);
             BKnight1.TabIndex = 0;
             BKnight1.UseVisualStyleBackColor = false;
+            BKnight1.Click += Piece_Click;
             // 
             // BBishop1
             // 
@@ -1118,11 +1185,12 @@ namespace ChessC
             BBishop1.FlatStyle = FlatStyle.Flat;
             BBishop1.ForeColor = Color.Transparent;
             BBishop1.Image = Properties.Resources.bbishop;
-            BBishop1.Location = new Point(390, 110);
+            BBishop1.Location = new Point(600, 110);
             BBishop1.Name = "BBishop1";
             BBishop1.Size = new Size(70, 70);
             BBishop1.TabIndex = 0;
             BBishop1.UseVisualStyleBackColor = false;
+            BBishop1.Click += Piece_Click;
             // 
             // BQueen
             // 
@@ -1135,6 +1203,7 @@ namespace ChessC
             BQueen.Size = new Size(70, 70);
             BQueen.TabIndex = 0;
             BQueen.UseVisualStyleBackColor = false;
+            BQueen.Click += Piece_Click;
             // 
             // BKing
             // 
@@ -1147,6 +1216,7 @@ namespace ChessC
             BKing.Size = new Size(70, 70);
             BKing.TabIndex = 0;
             BKing.UseVisualStyleBackColor = false;
+            BKing.Click += Piece_Click;
             // 
             // BBishop2
             // 
@@ -1154,11 +1224,12 @@ namespace ChessC
             BBishop2.FlatStyle = FlatStyle.Flat;
             BBishop2.ForeColor = Color.Transparent;
             BBishop2.Image = Properties.Resources.bbishop;
-            BBishop2.Location = new Point(600, 110);
+            BBishop2.Location = new Point(390, 110);
             BBishop2.Name = "BBishop2";
             BBishop2.Size = new Size(70, 70);
             BBishop2.TabIndex = 0;
             BBishop2.UseVisualStyleBackColor = false;
+            BBishop2.Click += Piece_Click;
             // 
             // BKnight2
             // 
@@ -1171,6 +1242,7 @@ namespace ChessC
             BKnight2.Size = new Size(70, 70);
             BKnight2.TabIndex = 0;
             BKnight2.UseVisualStyleBackColor = false;
+            BKnight2.Click += Piece_Click;
             // 
             // BRook2
             // 
@@ -1183,6 +1255,7 @@ namespace ChessC
             BRook2.Size = new Size(70, 70);
             BRook2.TabIndex = 0;
             BRook2.UseVisualStyleBackColor = false;
+            BRook2.Click += Piece_Click;
             // 
             // BPawn1
             // 
@@ -1190,11 +1263,12 @@ namespace ChessC
             BPawn1.FlatStyle = FlatStyle.Flat;
             BPawn1.ForeColor = Color.Transparent;
             BPawn1.Image = Properties.Resources.bpawn;
-            BPawn1.Location = new Point(250, 180);
+            BPawn1.Location = new Point(390, 180);
             BPawn1.Name = "BPawn1";
             BPawn1.Size = new Size(70, 70);
             BPawn1.TabIndex = 0;
             BPawn1.UseVisualStyleBackColor = false;
+            BPawn1.Click += Piece_Click;
             // 
             // BPawn2
             // 
@@ -1202,11 +1276,12 @@ namespace ChessC
             BPawn2.FlatStyle = FlatStyle.Flat;
             BPawn2.ForeColor = Color.Transparent;
             BPawn2.Image = Properties.Resources.bpawn;
-            BPawn2.Location = new Point(320, 180);
+            BPawn2.Location = new Point(740, 180);
             BPawn2.Name = "BPawn2";
             BPawn2.Size = new Size(70, 70);
             BPawn2.TabIndex = 0;
             BPawn2.UseVisualStyleBackColor = false;
+            BPawn2.Click += Piece_Click;
             // 
             // BPawn3
             // 
@@ -1214,11 +1289,12 @@ namespace ChessC
             BPawn3.FlatStyle = FlatStyle.Flat;
             BPawn3.ForeColor = Color.Transparent;
             BPawn3.Image = Properties.Resources.bpawn;
-            BPawn3.Location = new Point(390, 180);
+            BPawn3.Location = new Point(460, 180);
             BPawn3.Name = "BPawn3";
             BPawn3.Size = new Size(70, 70);
             BPawn3.TabIndex = 0;
             BPawn3.UseVisualStyleBackColor = false;
+            BPawn3.Click += Piece_Click;
             // 
             // BPawn4
             // 
@@ -1226,11 +1302,12 @@ namespace ChessC
             BPawn4.FlatStyle = FlatStyle.Flat;
             BPawn4.ForeColor = Color.Transparent;
             BPawn4.Image = Properties.Resources.bpawn;
-            BPawn4.Location = new Point(460, 180);
+            BPawn4.Location = new Point(670, 180);
             BPawn4.Name = "BPawn4";
             BPawn4.Size = new Size(70, 70);
             BPawn4.TabIndex = 0;
             BPawn4.UseVisualStyleBackColor = false;
+            BPawn4.Click += Piece_Click;
             // 
             // BPawn5
             // 
@@ -1238,11 +1315,12 @@ namespace ChessC
             BPawn5.FlatStyle = FlatStyle.Flat;
             BPawn5.ForeColor = Color.Transparent;
             BPawn5.Image = Properties.Resources.bpawn;
-            BPawn5.Location = new Point(530, 180);
+            BPawn5.Location = new Point(320, 180);
             BPawn5.Name = "BPawn5";
             BPawn5.Size = new Size(70, 70);
             BPawn5.TabIndex = 0;
             BPawn5.UseVisualStyleBackColor = false;
+            BPawn5.Click += Piece_Click;
             // 
             // BPawn6
             // 
@@ -1255,6 +1333,7 @@ namespace ChessC
             BPawn6.Size = new Size(70, 70);
             BPawn6.TabIndex = 0;
             BPawn6.UseVisualStyleBackColor = false;
+            BPawn6.Click += Piece_Click;
             // 
             // BPawn7
             // 
@@ -1262,11 +1341,12 @@ namespace ChessC
             BPawn7.FlatStyle = FlatStyle.Flat;
             BPawn7.ForeColor = Color.Transparent;
             BPawn7.Image = Properties.Resources.bpawn;
-            BPawn7.Location = new Point(670, 180);
+            BPawn7.Location = new Point(250, 180);
             BPawn7.Name = "BPawn7";
             BPawn7.Size = new Size(70, 70);
             BPawn7.TabIndex = 0;
             BPawn7.UseVisualStyleBackColor = false;
+            BPawn7.Click += Piece_Click;
             // 
             // BPawn8
             // 
@@ -1274,11 +1354,12 @@ namespace ChessC
             BPawn8.FlatStyle = FlatStyle.Flat;
             BPawn8.ForeColor = Color.Transparent;
             BPawn8.Image = Properties.Resources.bpawn;
-            BPawn8.Location = new Point(740, 180);
+            BPawn8.Location = new Point(530, 180);
             BPawn8.Name = "BPawn8";
             BPawn8.Size = new Size(70, 70);
             BPawn8.TabIndex = 0;
             BPawn8.UseVisualStyleBackColor = false;
+            BPawn8.Click += Piece_Click;
             // 
             // ChessUI
             // 
@@ -1383,106 +1464,116 @@ namespace ChessC
             Controls.Add(SquareH7);
             Name = "ChessUI";
             Text = "Chess";
+            Load += ChessUI_Load;
             ResumeLayout(false);
         }
 
         #endregion
 
-        private Button SquareA0;
-        private Button SquareA1;
-        private Button SquareA2;
-        private Button SquareA3;
-        private Button SquareA4;
-        private Button SquareA5;
-        private Button SquareA6;
-        private Button SquareA7;
-        private Button SquareB0;
-        private Button SquareB1;
-        private Button SquareB2;
-        private Button SquareB3;
-        private Button SquareB4;
-        private Button SquareB5;
-        private Button SquareB6;
-        private Button SquareB7;
-        private Button SquareC0;
-        private Button SquareC1;
-        private Button SquareC2;
-        private Button SquareC3;
-        private Button SquareC4;
-        private Button SquareC5;
-        private Button SquareC6;
-        private Button SquareC7;
-        private Button SquareD0;
-        private Button SquareD1;
-        private Button SquareD2;
-        private Button SquareD3;
-        private Button SquareD4;
-        private Button SquareD5;
-        private Button SquareD6;
-        private Button SquareD7;
-        private Button SquareE0;
-        private Button SquareE1;
-        private Button SquareE2;
-        private Button SquareE3;
-        private Button SquareE4;
-        private Button SquareE5;
-        private Button SquareE6;
-        private Button SquareE7;
-        private Button SquareF0;
-        private Button SquareF1;
-        private Button SquareF2;
-        private Button SquareF3;
-        private Button SquareF4;
-        private Button SquareF5;
-        private Button SquareF6;
-        private Button SquareF7;
-        private Button SquareG0;
-        private Button SquareG1;
-        private Button SquareG2;
-        private Button SquareG3;
-        private Button SquareG4;
-        private Button SquareG5;
-        private Button SquareG6;
-        private Button SquareG7;
-        private Button SquareH0;
-        private Button SquareH1;
-        private Button SquareH2;
-        private Button SquareH3;
-        private Button SquareH4;
-        private Button SquareH5;
-        private Button SquareH6;
-        private Button SquareH7;
-        private Button WRook1;
-        private Button WKnight1;
-        private Button WBishop1;
-        private Button WQueen;
-        private Button WKing;
-        private Button WBishop2;
-        private Button WKnight2;
-        private Button WRook2;
-        private Button WPawn1;
-        private Button WPawn2;
-        private Button WPawn3;
-        private Button WPawn4;
-        private Button WPawn5;
-        private Button WPawn6;
-        private Button WPawn7;
-        private Button WPawn8;
-        private Button BRook1;
-        private Button BKnight1;
-        private Button BBishop1;
-        private Button BQueen;
-        private Button BKing;
-        private Button BBishop2;
-        private Button BKnight2;
-        private Button BRook2;
-        private Button BPawn1;
-        private Button BPawn2;
-        private Button BPawn3;
-        private Button BPawn4;
-        private Button BPawn5;
-        private Button BPawn6;
-        private Button BPawn7;
-        private Button BPawn8;
+        private Square SquareA0;
+        private Square SquareA1;
+        private Square SquareA2;
+        private Square SquareA3;
+        private Square SquareA4;
+        private Square SquareA5;
+        private Square SquareA6;
+        private Square SquareA7;
+        private Square SquareB0;
+        private Square SquareB1;
+        private Square SquareB2;
+        private Square SquareB3;
+        private Square SquareB4;
+        private Square SquareB5;
+        private Square SquareB6;
+        private Square SquareB7;
+        private Square SquareC0;
+        private Square SquareC1;
+        private Square SquareC2;
+        private Square SquareC3;
+        private Square SquareC4;
+        private Square SquareC5;
+        private Square SquareC6;
+        private Square SquareC7;
+        private Square SquareD0;
+        private Square SquareD1;
+        private Square SquareD2;
+        private Square SquareD3;
+        private Square SquareD4;
+        private Square SquareD5;
+        private Square SquareD6;
+        private Square SquareD7;
+        private Square SquareE0;
+        private Square SquareE1;
+        private Square SquareE2;
+        private Square SquareE3;
+        private Square SquareE4;
+        private Square SquareE5;
+        private Square SquareE6;
+        private Square SquareE7;
+        private Square SquareF0;
+        private Square SquareF1;
+        private Square SquareF2;
+        private Square SquareF3;
+        private Square SquareF4;
+        private Square SquareF5;
+        private Square SquareF6;
+        private Square SquareF7;
+        private Square SquareG0;
+        private Square SquareG1;
+        private Square SquareG2;
+        private Square SquareG3;
+        private Square SquareG4;
+        private Square SquareG5;
+        private Square SquareG6;
+        private Square SquareG7;
+        private Square SquareH0;
+        private Square SquareH1;
+        private Square SquareH2;
+        private Square SquareH3;
+        private Square SquareH4;
+        private Square SquareH5;
+        private Square SquareH6;
+        private Square SquareH7;
+        private Piece WRook1;
+        private Piece WKnight1;
+        private Piece WBishop1;
+        private Piece WQueen;
+        private Piece WKing;
+        private Piece WBishop2;
+        private Piece WKnight2;
+        private Piece WRook2;
+        private Piece WPawn1;
+        private Piece WPawn2;
+        private Piece WPawn3;
+        private Piece WPawn4;
+        private Piece WPawn5;
+        private Piece WPawn6;
+        private Piece WPawn7;
+        private Piece WPawn8;
+        private Piece BRook1;
+        private Piece BKnight1;
+        private Piece BBishop1;
+        private Piece BQueen;
+        private Piece BKing;
+        private Piece BBishop2;
+        private Piece BKnight2;
+        private Piece BRook2;
+        private Piece BPawn1;
+        private Piece BPawn2;
+        private Piece BPawn3;
+        private Piece BPawn4;
+        private Piece BPawn5;
+        private Piece BPawn6;
+        private Piece BPawn7;
+        private Piece BPawn8;
+    }
+    public class Square : Button
+    {
+        public int[] IndexInBoard;
+        public Color OficialColor;
+    }
+    public class Piece : Button
+    {
+        public int[] Position;
     }
 }
