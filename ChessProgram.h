@@ -13,13 +13,14 @@ typedef struct _Piece {
     int numMoves; // number of moves that can be played by the piece
     int count; // number of moves played by the piece
     int moves[27][2]; // the moves that can play
-    void* (*function)();
+    void (*Movement)();
 }Piece, * PtrPiece;
 
 typedef struct {
     int x;
     int y;
-}Point;
+}Position;
+
 typedef struct _Player
 {
     Piece pieces[16]; // array of the current pieces of the player
@@ -30,6 +31,13 @@ typedef struct _TupleMoves {
     int* InLength;
     int*** ArrMoves;
 }TupleMoves, * PtrTupleMoves;
+
+typedef struct _Moves
+{
+    int MovesNumber;
+    int MovesToP[27][2];
+}Moves;
+
 
 extern Player WPlayer;
 extern Player BPlayer;
@@ -53,10 +61,7 @@ TupleMoves RookPossibleMoves(PtrPiece rook, int* PtrInLength, int*** PtrArrMoves
 void RookPlayedMoves(PtrPiece rook);
 int** KnightPossibleMoves(PtrPiece knight);
 void KnightPlayedMoves(PtrPiece knight);
-EXPORT int** MovesToPlay(Point position);
-EXPORT void CheckMovePlayed(PtrPiece piece, int* move);
-EXPORT void FreePointerDg1(int* ptr);
-EXPORT void FreePointerDg2(int** ptr);
-EXPORT void FreePointerDg3(int*** ptr);
+EXPORT Moves MovesToPlay(int x, int y);
+EXPORT void CheckMovePlayed(int x, int y);
 
 #endif

@@ -4,15 +4,16 @@ namespace ChessC
 {
     public partial class ChessUI : Form
     {
-        public Square[,] BoardSquares;
-        public Piece SelectedPiece;
-        public List<Square> SquareAbled;
         public ChessUI()
         {
             InitializeComponent();
             Initializing();
-
         }
+        public Square[,] BoardSquares = new Square[8, 8];
+        public Piece[] WPieces = new Piece[16];
+        public Piece[] BPieces = new Piece[16];
+        public Piece SelectedPiece = new Piece();
+        public List<Square> SquareAbled = new List<Square>();
         public void Initializing()
         {
             this.BoardSquares = new Square[8,8] { 
@@ -29,24 +30,27 @@ namespace ChessC
             {
                 for(int j = 0; j < 8; j++)
                 {
-                    BoardSquares[i, j].IndexInBoard = new int[2] { i, j };
-                    BoardSquares[i, j].OficialColor = BoardSquares[i, j].BackColor;
+                    this.BoardSquares[i, j].IndexInBoard = new int[2] { i, j };
+                    this.BoardSquares[i, j].OficialColor = this.BoardSquares[i, j].BackColor;
+                }
+            }
+            WPieces = new Piece[16] { WRook1, WKnight1, WBishop1, WQueen, WKing, WBishop2, WKnight2, WRook2, WPawn1, WPawn2, WPawn3, WPawn4, WPawn5, WPawn6, WPawn7, WPawn8 };
+            BPieces = new Piece[16] { BRook1, BKnight1, BBishop1, BQueen, BKing, BBishop2, BKnight2, BRook2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8 };
+            int index = 0;
+            for (int i = 0; i < 2; i++)
+            {
+                for(int j = 0; j < 8; j++)
+                {
+                    WPieces[index].Position = new int[2] { i, j };
+                    BPieces[index].Position = new int[2] { 7 - i, j };
+                    index++;
                 }
             }
         }
+
         private void ChessUI_Load(object sender, EventArgs e)
         {
-
-        }
-
-        public int[,] MovesToPlayIn(int[] PiecePosition)
-        {
-            int[,] Moves = { };
-            return Moves;
-        }
-        public void CheckMovePlayed(int[] WhereItWas, int[] WhereItIs)
-        {
-
+            Initializing();
         }
         private void Piece_Click(object sender, EventArgs e)
         {
@@ -77,7 +81,7 @@ namespace ChessC
                 {
                     SelectedPiece.Location = SquareSelected.Location;
                     SelectedPiece.BackColor = SquareSelected.OficialColor;
-                    CheckMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
+                    CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
                     SelectedPiece.Position = SquareSelected.IndexInBoard;
                     SelectedPiece.BringToFront();
                     for(int i = 0; i < this.SquareAbled.Count; i++)

@@ -566,26 +566,23 @@ void KnightPlayedMoves(PtrPiece knight) {
     }
 }
 
-EXPORT int** MovesToPlay(Point position) {
-    PtrPiece piece = board[position.x][position.y];
-    if (piece->type != 'K') {
-        return piece->moves;
-
+EXPORT Moves MovesToPlay(int x, int y) {
+    PtrPiece piece = board[x][y];
+    Moves moves;
+    piece->Movement;
+    moves.MovesNumber = piece->numMoves;
+    for (int i = 0; i < 27; i++) {
+        for (int j = 0; j < 2; j++) {
+            moves.MovesToP[i][j] = 0;
+        }
     }
-    else {
-        return piece->moves;
+    for (int i = 0; i < piece->numMoves; i++) {
+        moves.MovesToP[i][0] = piece->moves[i][0];
+        moves.MovesToP[i][1] = piece->moves[i][1];
     }
+    return moves;
 }
 
-EXPORT void CheckMovePlayed(PtrPiece piece, int* move) {
-}
+EXPORT void CheckMovePlayed(int x, int y) {
 
-EXPORT void FreePointerDg1(int* ptr) {
-    free(ptr);
-}
-EXPORT void FreePointerDg2(int** ptr) {
-    free(ptr);
-}
-EXPORT void FreePointerDg3(int*** ptr) {
-    free(ptr);
 }
