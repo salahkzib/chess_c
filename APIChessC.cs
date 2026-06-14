@@ -7,8 +7,9 @@ namespace ChessC
 {
     partial class ChessUI
     {
-        [DllImport("ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern Moves MovesToPlay(int x, int y);
-        [DllImport("ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern void CheckMovePlayed(int x, int y);
+        [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern Moves MovesToPlay(int x, int y);
+        [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern void CheckMovePlayed(int x, int y);
+        [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern void Initializing();
         public int[,] MovesToPlayIn(int[] PiecePosition)
         {
             int x = PiecePosition[0];
@@ -27,6 +28,11 @@ namespace ChessC
             int x = WhereItWas[0];
             int y = WhereItWas[1];
             CheckMovePlayed(x, y);
+        }
+
+        public void InitializingChess()
+        {
+            Initializing();
         }
     }
 

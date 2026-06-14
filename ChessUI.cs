@@ -7,14 +7,15 @@ namespace ChessC
         public ChessUI()
         {
             InitializeComponent();
-            Initializing();
+            UIInitializing();
+            InitializingChess();
         }
         public Square[,] BoardSquares = new Square[8, 8];
         public Piece[] WPieces = new Piece[16];
         public Piece[] BPieces = new Piece[16];
         public Piece SelectedPiece = new Piece();
         public List<Square> SquareAbled = new List<Square>();
-        public void Initializing()
+        public void UIInitializing()
         {
             this.BoardSquares = new Square[8,8] { 
                 {SquareA0, SquareA1, SquareA2, SquareA3, SquareA4, SquareA5, SquareA6, SquareA7 },
@@ -50,10 +51,22 @@ namespace ChessC
 
         private void ChessUI_Load(object sender, EventArgs e)
         {
-            Initializing();
         }
         private void Piece_Click(object sender, EventArgs e)
         {
+            Piece UsedPiece = (Piece)sender;
+            this.SelectedPiece = (Piece)sender;
+            int[,] SquaresToMoveOn = MovesToPlayIn(UsedPiece.Position);
+            int x, y;
+            for (int i = 0; i < SquaresToMoveOn.GetUpperBound(0); i++)
+            {
+                x = SquaresToMoveOn[i, 0];
+                y = SquaresToMoveOn[i, 1];
+                this.BoardSquares[x, y].Enabled = true;
+                this.BoardSquares[x, y].BackColor = Color.Green;
+                this.SquareAbled.Add(this.BoardSquares[x, y]);
+            }
+            /*
             try
             {
                 Piece UsedPiece = (Piece)sender;
@@ -70,10 +83,27 @@ namespace ChessC
                 }
             }
             catch{ }
+            */
         }
 
         private void Square_Click(object sender, EventArgs e)
         {
+            Square SquareSelected = (Square)sender;
+            if (SquareSelected != null)
+            {
+                SelectedPiece.Location = SquareSelected.Location;
+                SelectedPiece.BackColor = SquareSelected.OficialColor;
+                CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
+                SelectedPiece.Position = SquareSelected.IndexInBoard;
+                SelectedPiece.BringToFront();
+                for (int i = 0; i < this.SquareAbled.Count; i++)
+                {
+                    this.SquareAbled[i].BackColor = this.SquareAbled[i].OficialColor;
+                    this.SquareAbled[i].Enabled = false;
+                }
+                this.SquareAbled.Clear();
+            }
+            /*
             try
             {
                 Square SquareSelected = (Square)sender;
@@ -93,6 +123,7 @@ namespace ChessC
                 }
             }
             catch { }
+            */
         }
     }
 }
