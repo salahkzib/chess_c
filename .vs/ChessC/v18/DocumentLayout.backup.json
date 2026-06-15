@@ -3,24 +3,24 @@
   "WorkspaceRootPath": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\chessui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:chessui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\apichessc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:apichessc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\chessui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:chessui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\programc\\chessprogram.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:programc\\chessprogram.c||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\programc\\chessprogram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}",
       "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:programc\\chessprogram.h||{D0E1A5C6-B359-4E41-9B60-3365922C2A22}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\apichessc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:apichessc.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\chessui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:chessui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|c:\\users\\kzibs\\desktop\\repos\\chess_c\\chessui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|solutionrelative:chessui.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C53E487A-58BD-ABCD-7CCE-D5E79879A9FB}|ChessC.csproj|C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\chessui.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
@@ -43,66 +43,66 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "ChessProgram.c",
+              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.c",
+              "RelativeDocumentMoniker": "ProgramC\\ChessProgram.c",
+              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.c",
+              "RelativeToolTip": "ProgramC\\ChessProgram.c",
+              "ViewState": "AgIAAGsCAAAAAAAAAAAuwH0CAABIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
+              "WhenOpened": "2026-06-15T14:49:28.935Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ChessProgram.h",
+              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.h",
+              "RelativeDocumentMoniker": "ProgramC\\ChessProgram.h",
+              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.h",
+              "RelativeToolTip": "ProgramC\\ChessProgram.h",
+              "ViewState": "AgIAADcAAAAAAAAAAAAYwEMAAAAGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
+              "WhenOpened": "2026-06-15T14:49:27.654Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ChessUI.Designer.cs",
+              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.Designer.cs",
+              "RelativeDocumentMoniker": "ChessUI.Designer.cs",
+              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.Designer.cs",
+              "RelativeToolTip": "ChessUI.Designer.cs",
+              "ViewState": "AgIAAIIAAAAAAAAAAAAAAFQFAAAPAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-06-15T14:43:30.402Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
               "Title": "ChessUI.cs",
               "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.cs",
               "RelativeDocumentMoniker": "ChessUI.cs",
-              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.cs*",
-              "RelativeToolTip": "ChessUI.cs*",
-              "ViewState": "AgIAADUAAAAAAAAAAAAwwDwAAAA/AAAAAAAAAA==",
+              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.cs",
+              "RelativeToolTip": "ChessUI.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAmwBQAAAAaAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-25T13:06:44.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "APIChessC.cs",
               "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\APIChessC.cs",
               "RelativeDocumentMoniker": "APIChessC.cs",
               "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\APIChessC.cs",
               "RelativeToolTip": "APIChessC.cs",
-              "ViewState": "AgIAAAkAAAAAAAAAAAA4wBMAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAAsAAAAAAAAAAAA9wBAAAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-05-31T21:21:36.273Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ChessUI.Designer.cs",
-              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.Designer.cs",
-              "RelativeDocumentMoniker": "ChessUI.Designer.cs",
-              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.Designer.cs",
-              "RelativeToolTip": "ChessUI.Designer.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAANQFAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T17:18:45.118Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "ChessProgram.h",
-              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.h",
-              "RelativeDocumentMoniker": "ProgramC\\ChessProgram.h",
-              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.h",
-              "RelativeToolTip": "ProgramC\\ChessProgram.h",
-              "ViewState": "AgIAACIAAAAAAAAAAAAQwCwAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000680|",
-              "WhenOpened": "2026-05-28T01:38:44.117Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "ChessProgram.c",
-              "DocumentMoniker": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.c",
-              "RelativeDocumentMoniker": "ProgramC\\ChessProgram.c",
-              "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.c",
-              "RelativeToolTip": "ProgramC\\ChessProgram.c",
-              "ViewState": "AgIAAF8AAAAAAAAAAAAAACoAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000423|",
-              "WhenOpened": "2026-05-28T01:38:53.867Z",
               "EditorCaption": ""
             },
             {
@@ -114,7 +114,8 @@
               "ToolTip": "C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ChessUI.cs [Design]",
               "RelativeToolTip": "ChessUI.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-05-21T17:18:31.756Z"
+              "WhenOpened": "2026-05-21T17:18:31.756Z",
+              "EditorCaption": " [Design]"
             }
           ]
         }

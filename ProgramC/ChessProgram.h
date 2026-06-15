@@ -13,7 +13,7 @@ typedef struct _Piece {
     int numMoves; // number of moves that can be played by the piece
     int count; // number of moves played by the piece
     int moves[27][2]; // the moves that can play
-    void (*Movement)(struct _Piece *piece);
+    void (*Movement)(struct _Piece* piece);
 }Piece, * PtrPiece;
 
 typedef struct {
@@ -45,6 +45,7 @@ extern Piece WKing, WQueen, WRook1, WRook2, WBishop1, WBishop2, WKnight1, WKnigh
 extern Piece BKing, BQueen, BRook1, BRook2, BBishop1, BBishop2, BKnight1, BKnight2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8;
 extern Piece DefaultPiece;
 extern PtrPiece board[8][8];
+extern int SelectedPieceIndex[2];
 
 EXPORT void Initializing(void);
 bool SafeSquare(int x, int y);

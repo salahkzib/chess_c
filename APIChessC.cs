@@ -16,10 +16,11 @@ namespace ChessC
             int y = PiecePosition[1];
             Moves PieceMoves = MovesToPlay(x, y);
             int[,] Moves = new int[PieceMoves.MovesNumber, 2];
-            for(int i = 0; i < PieceMoves.MovesNumber;)
+            int j = 0;
+            for(int i = 0; i < PieceMoves.MovesNumber;i++)
             {
-                Moves[i, 0] = PieceMoves.ArrMoves[i++];
-                Moves[i, 1] = PieceMoves.ArrMoves[i++];
+                Moves[i, 0] = PieceMoves.ArrMoves[j++];
+                Moves[i, 1] = PieceMoves.ArrMoves[j++];
             }
             return Moves;
         }

@@ -20,15 +20,19 @@ Piece WKing, WQueen, WRook1, WRook2, WBishop1, WBishop2, WKnight1, WKnight2, WPa
 Piece BKing, BQueen, BRook1, BRook2, BBishop1, BBishop2, BKnight1, BKnight2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8;
 Piece DefaultPiece;
 PtrPiece board[8][8];
+int SelectedPieceIndex[2];
 
 EXPORT void Initializing(void) {
+    SelectedPieceIndex[0] = -1;
+    SelectedPieceIndex[1] = -1;
+
     DefaultPiece = (Piece){ false, true, 'E', {-1, -1}, 'd', 0, 0, 0 };
 
     WKing = (Piece){ false, true, 'K', {0, 4}, 'w', 1, 0, 0 };
     WQueen = (Piece){ false, true, 'Q', {0, 3}, 'w', 1, 0, 0 };
     WRook1 = (Piece){ false, true, 'R', {0, 0}, 'w', 1, 0, 0 };
     WRook2 = (Piece){ false, true, 'R', {0, 7}, 'w', 1, 0, 0 };
-    WBishop1 = (Piece){ false, true, 'B', {6, 2}, 'w', 1, 0, 0 };
+    WBishop1 = (Piece){ false, true, 'B', {0, 2}, 'w', 1, 0, 0 };
     WBishop2 = (Piece){ false, true, 'B', {0, 5}, 'w', 1, 0, 0 };
     WKnight1 = (Piece){ false, true, 'N', {0, 1}, 'w', 1, 0, 0 };
     WKnight2 = (Piece){ false, true, 'N', {0, 6}, 'w', 1, 0, 0 };
@@ -602,6 +606,8 @@ void KnightPlayedMoves(PtrPiece knight) {
 }
 
 EXPORT Moves MovesToPlay(int x, int y) {
+    SelectedPieceIndex[0] = x;
+    SelectedPieceIndex[1] = y;
     PtrPiece piece = board[x][y];
     Moves moves;
     piece->Movement(piece);
@@ -619,5 +625,15 @@ EXPORT Moves MovesToPlay(int x, int y) {
 }
 
 EXPORT void CheckMovePlayed(int x, int y) {
-
+    PtrPiece selected_piece = board[SelectedPieceIndex[0]][SelectedPieceIndex[1]];
+    board[x][y] = selected_piece;
+    selected_piece->position[0] = x;
+    selected_piece->position[1] = y;
+    selected_piece->count++;
+    for (int i = 0; i < selected_piece->numMoves; i++) {
+        selected_piece->moves[i][0] = 0;
+        selected_piece->moves[i][1] = 0;
+    }
+    selected_piece->numMoves = 0;
+    board[SelectedPieceIndex[0]][SelectedPieceIndex[1]] = &DefaultPiece;
 }

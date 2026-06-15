@@ -17,22 +17,22 @@ namespace ChessC
         public List<Square> SquareAbled = new List<Square>();
         public void UIInitializing()
         {
-            this.BoardSquares = new Square[8,8] { 
-                {SquareA0, SquareA1, SquareA2, SquareA3, SquareA4, SquareA5, SquareA6, SquareA7 },
-                {SquareB0, SquareB1, SquareB2, SquareB3, SquareB4, SquareB5, SquareB6, SquareB7 },
-                {SquareC0, SquareC1, SquareC2, SquareC3, SquareC4, SquareC5, SquareC6, SquareC7 },
-                {SquareD0, SquareD1, SquareD2, SquareD3, SquareD4, SquareD5, SquareD6, SquareD7 },
-                {SquareE0, SquareE1, SquareE2, SquareE3, SquareE4, SquareE5, SquareE6, SquareE7 },
-                {SquareF0, SquareF1, SquareF2, SquareF3, SquareF4, SquareF5, SquareF6, SquareF7 },
-                {SquareG0, SquareG1, SquareG2, SquareG3, SquareG4, SquareG5, SquareG6, SquareG7 },
-                {SquareH0, SquareH1, SquareH2, SquareH3, SquareH4, SquareH5, SquareH6, SquareH7 }
+            this.BoardSquares = new Square[8, 8] {
+                { SquareA0, SquareB0, SquareC0, SquareD0, SquareE0, SquareF0, SquareG0, SquareH0 },
+                { SquareA1, SquareB1, SquareC1, SquareD1, SquareE1, SquareF1, SquareG1, SquareH1 },
+                { SquareA2, SquareB2, SquareC2, SquareD2, SquareE2, SquareF2, SquareG2, SquareH2 },
+                { SquareA3, SquareB3, SquareC3, SquareD3, SquareE3, SquareF3, SquareG3, SquareH3 },
+                { SquareA4, SquareB4, SquareC4, SquareD4, SquareE4, SquareF4, SquareG4, SquareH4 },
+                { SquareA5, SquareB5, SquareC5, SquareD5, SquareE5, SquareF5, SquareG5, SquareH5 },
+                { SquareA6, SquareB6, SquareC6, SquareD6, SquareE6, SquareF6, SquareG6, SquareH6 },
+                { SquareA7, SquareB7, SquareC7, SquareD7, SquareE7, SquareF7, SquareG7, SquareH7 }
             };
             for(int i = 0; i < 8; i++)
             {
                 for(int j = 0; j < 8; j++)
                 {
                     this.BoardSquares[i, j].IndexInBoard = new int[2] { i, j };
-                    this.BoardSquares[i, j].OficialColor = this.BoardSquares[i, j].BackColor;
+                    this.BoardSquares[i, j].OfficialColor = this.BoardSquares[i, j].BackColor;
                 }
             }
             WPieces = new Piece[16] { WRook1, WKnight1, WBishop1, WQueen, WKing, WBishop2, WKnight2, WRook2, WPawn1, WPawn2, WPawn3, WPawn4, WPawn5, WPawn6, WPawn7, WPawn8 };
@@ -57,8 +57,9 @@ namespace ChessC
             Piece UsedPiece = (Piece)sender;
             this.SelectedPiece = (Piece)sender;
             int[,] SquaresToMoveOn = MovesToPlayIn(UsedPiece.Position);
+            int len = SquaresToMoveOn.GetLength(0);
             int x, y;
-            for (int i = 0; i < SquaresToMoveOn.GetUpperBound(0); i++)
+            for (int i = 0; i < len; i++)
             {
                 x = SquaresToMoveOn[i, 0];
                 y = SquaresToMoveOn[i, 1];
@@ -92,13 +93,13 @@ namespace ChessC
             if (SquareSelected != null)
             {
                 SelectedPiece.Location = SquareSelected.Location;
-                SelectedPiece.BackColor = SquareSelected.OficialColor;
+                SelectedPiece.BackColor = SquareSelected.OfficialColor;
                 CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
                 SelectedPiece.Position = SquareSelected.IndexInBoard;
                 SelectedPiece.BringToFront();
                 for (int i = 0; i < this.SquareAbled.Count; i++)
                 {
-                    this.SquareAbled[i].BackColor = this.SquareAbled[i].OficialColor;
+                    this.SquareAbled[i].BackColor = this.SquareAbled[i].OfficialColor;
                     this.SquareAbled[i].Enabled = false;
                 }
                 this.SquareAbled.Clear();

@@ -1055,7 +1055,7 @@ namespace ChessC
             WPawn1.FlatStyle = FlatStyle.Flat;
             WPawn1.ForeColor = Color.Transparent;
             WPawn1.Image = Properties.Resources.wpawn;
-            WPawn1.Location = new Point(460, 530);
+            WPawn1.Location = new Point(250, 530);
             WPawn1.Name = "WPawn1";
             WPawn1.Size = new Size(70, 70);
             WPawn1.TabIndex = 0;
@@ -1068,7 +1068,7 @@ namespace ChessC
             WPawn2.FlatStyle = FlatStyle.Flat;
             WPawn2.ForeColor = Color.Transparent;
             WPawn2.Image = Properties.Resources.wpawn;
-            WPawn2.Location = new Point(390, 530);
+            WPawn2.Location = new Point(320, 530);
             WPawn2.Name = "WPawn2";
             WPawn2.Size = new Size(70, 70);
             WPawn2.TabIndex = 0;
@@ -1081,7 +1081,7 @@ namespace ChessC
             WPawn3.FlatStyle = FlatStyle.Flat;
             WPawn3.ForeColor = Color.Transparent;
             WPawn3.Image = Properties.Resources.wpawn;
-            WPawn3.Location = new Point(320, 530);
+            WPawn3.Location = new Point(390, 530);
             WPawn3.Name = "WPawn3";
             WPawn3.Size = new Size(70, 70);
             WPawn3.TabIndex = 0;
@@ -1094,7 +1094,7 @@ namespace ChessC
             WPawn4.FlatStyle = FlatStyle.Flat;
             WPawn4.ForeColor = Color.Transparent;
             WPawn4.Image = Properties.Resources.wpawn;
-            WPawn4.Location = new Point(740, 530);
+            WPawn4.Location = new Point(460, 530);
             WPawn4.Name = "WPawn4";
             WPawn4.Size = new Size(70, 70);
             WPawn4.TabIndex = 0;
@@ -1107,7 +1107,7 @@ namespace ChessC
             WPawn5.FlatStyle = FlatStyle.Flat;
             WPawn5.ForeColor = Color.Transparent;
             WPawn5.Image = Properties.Resources.wpawn;
-            WPawn5.Location = new Point(250, 530);
+            WPawn5.Location = new Point(530, 530);
             WPawn5.Name = "WPawn5";
             WPawn5.Size = new Size(70, 70);
             WPawn5.TabIndex = 0;
@@ -1120,7 +1120,7 @@ namespace ChessC
             WPawn6.FlatStyle = FlatStyle.Flat;
             WPawn6.ForeColor = Color.Transparent;
             WPawn6.Image = Properties.Resources.wpawn;
-            WPawn6.Location = new Point(530, 530);
+            WPawn6.Location = new Point(600, 530);
             WPawn6.Name = "WPawn6";
             WPawn6.Size = new Size(70, 70);
             WPawn6.TabIndex = 0;
@@ -1133,7 +1133,7 @@ namespace ChessC
             WPawn7.FlatStyle = FlatStyle.Flat;
             WPawn7.ForeColor = Color.Transparent;
             WPawn7.Image = Properties.Resources.wpawn;
-            WPawn7.Location = new Point(600, 530);
+            WPawn7.Location = new Point(670, 530);
             WPawn7.Name = "WPawn7";
             WPawn7.Size = new Size(70, 70);
             WPawn7.TabIndex = 0;
@@ -1146,7 +1146,7 @@ namespace ChessC
             WPawn8.FlatStyle = FlatStyle.Flat;
             WPawn8.ForeColor = Color.Transparent;
             WPawn8.Image = Properties.Resources.wpawn;
-            WPawn8.Location = new Point(670, 530);
+            WPawn8.Location = new Point(740, 530);
             WPawn8.Name = "WPawn8";
             WPawn8.Size = new Size(70, 70);
             WPawn8.TabIndex = 0;
@@ -1185,7 +1185,7 @@ namespace ChessC
             BBishop1.FlatStyle = FlatStyle.Flat;
             BBishop1.ForeColor = Color.Transparent;
             BBishop1.Image = Properties.Resources.bbishop;
-            BBishop1.Location = new Point(600, 110);
+            BBishop1.Location = new Point(390, 110);
             BBishop1.Name = "BBishop1";
             BBishop1.Size = new Size(70, 70);
             BBishop1.TabIndex = 0;
@@ -1224,7 +1224,7 @@ namespace ChessC
             BBishop2.FlatStyle = FlatStyle.Flat;
             BBishop2.ForeColor = Color.Transparent;
             BBishop2.Image = Properties.Resources.bbishop;
-            BBishop2.Location = new Point(390, 110);
+            BBishop2.Location = new Point(600, 110);
             BBishop2.Name = "BBishop2";
             BBishop2.Size = new Size(70, 70);
             BBishop2.TabIndex = 0;
@@ -1263,7 +1263,7 @@ namespace ChessC
             BPawn1.FlatStyle = FlatStyle.Flat;
             BPawn1.ForeColor = Color.Transparent;
             BPawn1.Image = Properties.Resources.bpawn;
-            BPawn1.Location = new Point(390, 180);
+            BPawn1.Location = new Point(250, 180);
             BPawn1.Name = "BPawn1";
             BPawn1.Size = new Size(70, 70);
             BPawn1.TabIndex = 0;
@@ -1276,7 +1276,7 @@ namespace ChessC
             BPawn2.FlatStyle = FlatStyle.Flat;
             BPawn2.ForeColor = Color.Transparent;
             BPawn2.Image = Properties.Resources.bpawn;
-            BPawn2.Location = new Point(740, 180);
+            BPawn2.Location = new Point(320, 180);
             BPawn2.Name = "BPawn2";
             BPawn2.Size = new Size(70, 70);
             BPawn2.TabIndex = 0;
@@ -1289,7 +1289,7 @@ namespace ChessC
             BPawn3.FlatStyle = FlatStyle.Flat;
             BPawn3.ForeColor = Color.Transparent;
             BPawn3.Image = Properties.Resources.bpawn;
-            BPawn3.Location = new Point(460, 180);
+            BPawn3.Location = new Point(390, 180);
             BPawn3.Name = "BPawn3";
             BPawn3.Size = new Size(70, 70);
             BPawn3.TabIndex = 0;
@@ -1302,7 +1302,7 @@ namespace ChessC
             BPawn4.FlatStyle = FlatStyle.Flat;
             BPawn4.ForeColor = Color.Transparent;
             BPawn4.Image = Properties.Resources.bpawn;
-            BPawn4.Location = new Point(670, 180);
+            BPawn4.Location = new Point(460, 180);
             BPawn4.Name = "BPawn4";
             BPawn4.Size = new Size(70, 70);
             BPawn4.TabIndex = 0;
@@ -1315,7 +1315,7 @@ namespace ChessC
             BPawn5.FlatStyle = FlatStyle.Flat;
             BPawn5.ForeColor = Color.Transparent;
             BPawn5.Image = Properties.Resources.bpawn;
-            BPawn5.Location = new Point(320, 180);
+            BPawn5.Location = new Point(530, 180);
             BPawn5.Name = "BPawn5";
             BPawn5.Size = new Size(70, 70);
             BPawn5.TabIndex = 0;
@@ -1341,7 +1341,7 @@ namespace ChessC
             BPawn7.FlatStyle = FlatStyle.Flat;
             BPawn7.ForeColor = Color.Transparent;
             BPawn7.Image = Properties.Resources.bpawn;
-            BPawn7.Location = new Point(250, 180);
+            BPawn7.Location = new Point(670, 180);
             BPawn7.Name = "BPawn7";
             BPawn7.Size = new Size(70, 70);
             BPawn7.TabIndex = 0;
@@ -1354,7 +1354,7 @@ namespace ChessC
             BPawn8.FlatStyle = FlatStyle.Flat;
             BPawn8.ForeColor = Color.Transparent;
             BPawn8.Image = Properties.Resources.bpawn;
-            BPawn8.Location = new Point(530, 180);
+            BPawn8.Location = new Point(740, 180);
             BPawn8.Name = "BPawn8";
             BPawn8.Size = new Size(70, 70);
             BPawn8.TabIndex = 0;
@@ -1570,7 +1570,7 @@ namespace ChessC
     public class Square : Button
     {
         public int[] IndexInBoard;
-        public Color OficialColor;
+        public Color OfficialColor;
     }
     public class Piece : Button
     {
