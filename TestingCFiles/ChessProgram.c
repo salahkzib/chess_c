@@ -133,7 +133,7 @@ int** PawnPossibleMoves(PtrPiece pawn)
             PossibleMoves[i][0] = nx;
             PossibleMoves[i][1] = ny;
         }
-        else {
+        else{
             PossibleMoves[i][0] = -1;
             PossibleMoves[i][1] = -1;
         }
@@ -534,7 +534,7 @@ int** KnightPossibleMoves(PtrPiece knight) {
             j++;
         }
     }
-    while (j < 8) {
+    while(j < 8) {
         PossibleMoves[j][0] = -1;
         PossibleMoves[j][1] = -1;
         j++;
@@ -552,12 +552,12 @@ void KnightPlayedMoves(PtrPiece knight) {
         int** ArrPM = KnightPossibleMoves(knight);
         int PossibleMoves[8][2];
         int len = 0;
-        while (len < 8) {
-            if (ArrPM[len][0] != -1) {
+        while(len < 8) {
+            if(ArrPM[len][0] != -1) {
                 PossibleMoves[len][0] = ArrPM[len][0];
                 PossibleMoves[len][1] = ArrPM[len][1];
             }
-            else {
+            else{
                 break;
             }
             len++;
@@ -583,44 +583,44 @@ void KnightPlayedMoves(PtrPiece knight) {
 
 EXPORT Moves MovesToPlay(int x, int y) {
     PtrPiece piece = board[x][y];
-    switch (piece->color) {
-    case 'w':
-        if (WPlayer.tour == 0) {
-            Moves EmptyMoves = { 0 };
-            return EmptyMoves;
-        }
-        break;
-    case 'b':
-        if (BPlayer.tour == 0) {
-            Moves EmptyMoves = { 0 };
-            return EmptyMoves;
-        }
-        break;
-    default:
-        Moves EmptyMoves = { 0 };
-        return EmptyMoves;
-        break;
+    switch (piece->color){
+        case 'w':
+            if (WPlayer.tour == 0) {
+                Moves EmptyMoves = { 0 };
+                return EmptyMoves;
+            }
+            break;
+        case 'b':
+            if (BPlayer.tour == 0) {
+                Moves EmptyMoves = { 0 };
+                return EmptyMoves;
+            }
+            break;
+        default:
+                Moves EmptyMoves = { 0 };
+                return EmptyMoves;
+                break;
     }
     Moves moves;
     switch (piece->type)
     {
-    case 'K':
-        KingPlayedMoves(piece);
-        break;
-    case 'Q':
-        QueenPlayedMoves(piece);
-        break;
-    case 'N':
-        KnightPlayedMoves(piece);
-        break;
-    case 'P':
-        PawnPlayedMoves(piece);
-        break;
-    case 'R':
-        RookPlayedMoves(piece);
-        break;
-    default:
-        break;
+        case 'K':
+            KingPlayedMoves(piece);
+            break;
+        case 'Q':
+            QueenPlayedMoves(piece);
+            break;
+        case 'N':
+            KnightPlayedMoves(piece);
+            break;
+        case 'P':
+            PawnPlayedMoves(piece);
+            break;
+        case 'R':
+            RookPlayedMoves(piece);
+            break;
+        default:
+            break;
     }
     moves.MovesNumber = piece->numMoves;
     for (int i = 0; i < 27; i++) {
@@ -642,12 +642,12 @@ EXPORT void CheckMovePlayed(int x, int y, int nx, int ny) {
     board[nx][ny]->position[0] = nx;
     board[nx][ny]->position[1] = ny;
     board[nx][ny]->count++;
-    for (int i = 0; i < board[nx][ny]->numMoves; i++) {
+    for(int i = 0; i < board[nx][ny]->numMoves; i++) {
         board[nx][ny]->moves[i][0] = 0;
         board[nx][ny]->moves[i][1] = 0;
     }
     board[nx][ny]->numMoves = 0;
-    if (selected_piece->color == 'w') {
+    if(selected_piece->color == 'w') {
         WPlayer.tour = 0;
         BPlayer.tour = 1;
     }
