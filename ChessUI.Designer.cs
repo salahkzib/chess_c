@@ -217,6 +217,7 @@ namespace ChessC
             SquareA6.Size = new Size(70, 70);
             SquareA6.TabIndex = 0;
             SquareA6.UseVisualStyleBackColor = false;
+            SquareA6.Click += Square_Click;
             // 
             // SquareA7
             // 
@@ -229,6 +230,7 @@ namespace ChessC
             SquareA7.Size = new Size(70, 70);
             SquareA7.TabIndex = 0;
             SquareA7.UseVisualStyleBackColor = false;
+            SquareA7.Click += Square_Click;
             // 
             // SquareB0
             // 
@@ -319,6 +321,7 @@ namespace ChessC
             SquareB6.Size = new Size(70, 70);
             SquareB6.TabIndex = 0;
             SquareB6.UseVisualStyleBackColor = false;
+            SquareB6.Click += Square_Click;
             // 
             // SquareB7
             // 
@@ -331,6 +334,7 @@ namespace ChessC
             SquareB7.Size = new Size(70, 70);
             SquareB7.TabIndex = 0;
             SquareB7.UseVisualStyleBackColor = false;
+            SquareB7.Click += Square_Click;
             // 
             // SquareC0
             // 
@@ -421,6 +425,7 @@ namespace ChessC
             SquareC6.Size = new Size(70, 70);
             SquareC6.TabIndex = 0;
             SquareC6.UseVisualStyleBackColor = false;
+            SquareC6.Click += Square_Click;
             // 
             // SquareC7
             // 
@@ -433,6 +438,7 @@ namespace ChessC
             SquareC7.Size = new Size(70, 70);
             SquareC7.TabIndex = 0;
             SquareC7.UseVisualStyleBackColor = false;
+            SquareC7.Click += Square_Click;
             // 
             // SquareD0
             // 
@@ -523,6 +529,7 @@ namespace ChessC
             SquareD6.Size = new Size(70, 70);
             SquareD6.TabIndex = 0;
             SquareD6.UseVisualStyleBackColor = false;
+            SquareD6.Click += Square_Click;
             // 
             // SquareD7
             // 
@@ -535,6 +542,7 @@ namespace ChessC
             SquareD7.Size = new Size(70, 70);
             SquareD7.TabIndex = 0;
             SquareD7.UseVisualStyleBackColor = false;
+            SquareD7.Click += Square_Click;
             // 
             // SquareE0
             // 
@@ -625,6 +633,7 @@ namespace ChessC
             SquareE6.Size = new Size(70, 70);
             SquareE6.TabIndex = 0;
             SquareE6.UseVisualStyleBackColor = false;
+            SquareE6.Click += Square_Click;
             // 
             // SquareE7
             // 
@@ -637,6 +646,7 @@ namespace ChessC
             SquareE7.Size = new Size(70, 70);
             SquareE7.TabIndex = 0;
             SquareE7.UseVisualStyleBackColor = false;
+            SquareE7.Click += Square_Click;
             // 
             // SquareF0
             // 
@@ -740,6 +750,7 @@ namespace ChessC
             SquareF7.Size = new Size(70, 70);
             SquareF7.TabIndex = 0;
             SquareF7.UseVisualStyleBackColor = false;
+            SquareF7.Click += Square_Click;
             // 
             // SquareG0
             // 
@@ -830,6 +841,7 @@ namespace ChessC
             SquareG6.Size = new Size(70, 70);
             SquareG6.TabIndex = 0;
             SquareG6.UseVisualStyleBackColor = false;
+            SquareG6.Click += Square_Click;
             // 
             // SquareG7
             // 
@@ -842,6 +854,7 @@ namespace ChessC
             SquareG7.Size = new Size(70, 70);
             SquareG7.TabIndex = 0;
             SquareG7.UseVisualStyleBackColor = false;
+            SquareG7.Click += Square_Click;
             // 
             // SquareH0
             // 
@@ -932,6 +945,7 @@ namespace ChessC
             SquareH6.Size = new Size(70, 70);
             SquareH6.TabIndex = 0;
             SquareH6.UseVisualStyleBackColor = false;
+            SquareH6.Click += Square_Click;
             // 
             // SquareH7
             // 
@@ -944,6 +958,7 @@ namespace ChessC
             SquareH7.Size = new Size(70, 70);
             SquareH7.TabIndex = 0;
             SquareH7.UseVisualStyleBackColor = false;
+            SquareH7.Click += Square_Click;
             // 
             // WRook1
             // 

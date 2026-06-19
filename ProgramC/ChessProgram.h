@@ -4,6 +4,7 @@
 #include <stdbool.h>
 
 typedef struct _Piece {
+    bool isCalculated; // if the possible moves are calculated or not (true or false)
     bool isProtected; // protected by another piece or not (true or false)
     bool ability; // can move or not (true or false)
     char type; // K, Q, R, B, N, P, E

@@ -54,6 +54,7 @@ namespace ChessC
         }
         private void Piece_Click(object sender, EventArgs e)
         {
+            UnablingSquares();
             Piece UsedPiece = (Piece)sender;
             this.SelectedPiece = (Piece)sender;
             int[,] SquaresToMoveOn = MovesToPlayIn(UsedPiece.Position);
@@ -67,27 +68,9 @@ namespace ChessC
                 this.BoardSquares[x, y].BackColor = Color.Green;
                 this.SquareAbled.Add(this.BoardSquares[x, y]);
             }
-            /*
-            try
-            {
-                Piece UsedPiece = (Piece)sender;
-                this.SelectedPiece = (Piece)sender;
-                int[,] SquaresToMoveOn = MovesToPlayIn(UsedPiece.Position);
-                int x, y;
-                for (int i = 0; i < SquaresToMoveOn.Length; i++)
-                {
-                    x = SquaresToMoveOn[i, 0];
-                    y = SquaresToMoveOn[i, 1];
-                    this.BoardSquares[x, y].Enabled = true;
-                    this.BoardSquares[x, y].BackColor = Color.Green;
-                    this.SquareAbled.Add(this.BoardSquares[x, y]);
-                }
-            }
-            catch{ }
-            */
         }
 
-        private void Square_Click(object sender, EventArgs e)
+        public void Square_Click(object sender, EventArgs e)
         {
             Square SquareSelected = (Square)sender;
             if (SquareSelected != null)
@@ -97,34 +80,17 @@ namespace ChessC
                 CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
                 SelectedPiece.Position = SquareSelected.IndexInBoard;
                 SelectedPiece.BringToFront();
-                for (int i = 0; i < this.SquareAbled.Count; i++)
-                {
-                    this.SquareAbled[i].BackColor = this.SquareAbled[i].OfficialColor;
-                    this.SquareAbled[i].Enabled = false;
-                }
-                this.SquareAbled.Clear();
+                UnablingSquares();
             }
-            /*
-            try
+        }
+        private void UnablingSquares()
+        {
+            for (int i = 0; i < this.SquareAbled.Count; i++)
             {
-                Square SquareSelected = (Square)sender;
-                if (SquareSelected != null)
-                {
-                    SelectedPiece.Location = SquareSelected.Location;
-                    SelectedPiece.BackColor = SquareSelected.OficialColor;
-                    CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
-                    SelectedPiece.Position = SquareSelected.IndexInBoard;
-                    SelectedPiece.BringToFront();
-                    for(int i = 0; i < this.SquareAbled.Count; i++)
-                    {
-                        this.SquareAbled[i].BackColor = this.SquareAbled[i].OficialColor;
-                        this.SquareAbled[i].Enabled = false;
-                    }
-                    this.SquareAbled.Clear();
-                }
+                this.SquareAbled[i].BackColor = this.SquareAbled[i].OfficialColor;
+                this.SquareAbled[i].Enabled = false;
             }
-            catch { }
-            */
+            this.SquareAbled.Clear();
         }
     }
 }
