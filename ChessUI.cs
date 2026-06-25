@@ -83,6 +83,14 @@ namespace ChessC
                 UnablingSquares();
             }
         }
+
+        public void Piece_ToBe_Taked(object sender, EventArgs e)
+        {
+            Piece piece = (Piece)sender;
+            SelectedPiece.Location = piece.Location;
+            piece.Hide();
+        }
+
         private void UnablingSquares()
         {
             for (int i = 0; i < this.SquareAbled.Count; i++)

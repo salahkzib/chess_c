@@ -12,8 +12,10 @@ typedef struct _Piece {
     char color; // w, b, d(for default piece)
     int side; // 1 or -1 or 0(for default piece)
     int numMoves; // number of moves that can be played by the piece
+    int TakenMovesNum; // number of moves that can be played by the piece and take a piece oppenent
     int count; // number of moves played by the piece
     int moves[27][2]; // the moves that can play
+    int TakenMoves[8][2];
 }Piece, * PtrPiece;
 
 typedef struct {
@@ -23,6 +25,7 @@ typedef struct {
 
 typedef struct _Player
 {
+    int PiecesNumber; // 0 to 16
     int tour; // 0 or 1
     Piece pieces[16]; // array of the current pieces of the player
 }Player, * PtrPlayer;
@@ -36,7 +39,9 @@ typedef struct _TupleMoves {
 typedef struct _Moves
 {
     int MovesNumber;
-    int MovesToP[27][2];
+    int MovesToP[54];
+    int TakenMovesNumber;
+    int TakenMoves[16];
 }Moves;
 
 
@@ -64,6 +69,6 @@ void RookPlayedMoves(PtrPiece rook);
 int** KnightPossibleMoves(PtrPiece knight);
 void KnightPlayedMoves(PtrPiece knight);
 EXPORT Moves MovesToPlay(int x, int y);
-EXPORT void CheckMovePlayed(int x, int y, int nx, int ny);
+EXPORT void CheckMovePlayed(int x, int y, int nx, int ny, bool IsTake);
 
 #endif
