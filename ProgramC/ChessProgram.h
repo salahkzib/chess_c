@@ -14,8 +14,9 @@ typedef struct _Piece {
     int numMoves; // number of moves that can be played by the piece
     int TakenMovesNum; // number of moves that can be played by the piece and take a piece oppenent
     int count; // number of moves played by the piece
-    int moves[27][2]; // the moves that can play
-    int TakenMoves[8][2];
+    int index; // index of piece in player array
+    int moves[27][2]; // the moves that can be played
+    int TakenMoves[8][2]; // the moves that can be played and take a piece of the opponent pieces
 }Piece, * PtrPiece;
 
 typedef struct {
@@ -38,10 +39,12 @@ typedef struct _TupleMoves {
 
 typedef struct _Moves
 {
+    char PieceColor;
+    int PieceIndex;
     int MovesNumber;
     int MovesToP[54];
     int TakenMovesNumber;
-    int TakenMoves[16];
+    int TakenMoves[8];
 }Moves;
 
 

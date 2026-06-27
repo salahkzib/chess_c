@@ -25,35 +25,35 @@ EXPORT void Initializing(void) {
 
     DefaultPiece = (Piece){ false, false, true, 'E', {-1, -1}, 'd', 0, 0, 0, 0 };
 
-    WKing = (Piece){ false, false, true, 'K', {0, 4}, 'w', 1, 0, 0, 0 };
-    WQueen = (Piece){ false, false, true, 'Q', {0, 3}, 'w', 1, 0, 0, 0 };
-    WRook1 = (Piece){ false, false, true, 'R', {0, 0}, 'w', 1, 0, 0, 0 };
-    WRook2 = (Piece){ false, false, true, 'R', {0, 7}, 'w', 1, 0, 0, 0 };
-    WBishop1 = (Piece){ false, false, true, 'B', {0, 2}, 'w', 1, 0, 0, 0 };
-    WBishop2 = (Piece){ false, false, true, 'B', {0, 5}, 'w', 1, 0, 0, 0 };
-    WKnight1 = (Piece){ false, false, true, 'N', {0, 1}, 'w', 1, 0, 0, 0 };
-    WKnight2 = (Piece){ false, false, true, 'N', {0, 6}, 'w', 1, 0, 0, 0 };
-    WPawn1 = (Piece){ false, false, true, 'P', {1, 0}, 'w', 1, 0, 0, 0 };
-    WPawn2 = (Piece){ false, false, true, 'P', {1, 1}, 'w', 1, 0, 0, 0 };
-    WPawn3 = (Piece){ false, false, true, 'P', {1, 2}, 'w', 1, 0, 0, 0 };
-    WPawn4 = (Piece){ false, false, true, 'P', {1, 3}, 'w', 1, 0, 0, 0 };
-    WPawn5 = (Piece){ false, false, true, 'P', {1, 4}, 'w', 1, 0, 0, 0 };
-    WPawn6 = (Piece){ false, false, true, 'P', {1, 5}, 'w', 1, 0, 0, 0 };
-    WPawn7 = (Piece){ false, false, true, 'P', {1, 6}, 'w', 1, 0, 0, 0 };
-    WPawn8 = (Piece){ false, false, true, 'P', {1, 7}, 'w', 1, 0, 0, 0 };
+    WRook1 = (Piece){ false, false, true, 'R', {0, 0}, 'w', 1, 0, 0, 0, 0 };
+    WKnight1 = (Piece){ false, false, true, 'N', {0, 1}, 'w', 1, 0, 0, 0, 1 };
+    WBishop1 = (Piece){ false, false, true, 'B', {0, 2}, 'w', 1, 0, 0, 0, 2 };
+    WQueen = (Piece){ false, false, true, 'Q', {0, 3}, 'w', 1, 0, 0, 0, 3 };
+    WKing = (Piece){ false, false, true, 'K', {0, 4}, 'w', 1, 0, 0, 0, 4 };
+    WBishop2 = (Piece){ false, false, true, 'B', {0, 5}, 'w', 1, 0, 0, 0, 5 };
+    WKnight2 = (Piece){ false, false, true, 'N', {0, 6}, 'w', 1, 0, 0, 0, 6 };
+    WRook2 = (Piece){ false, false, true, 'R', {0, 7}, 'w', 1, 0, 0, 0, 7 };
+    WPawn1 = (Piece){ false, false, true, 'P', {1, 0}, 'w', 1, 0, 0, 0, 8 };
+    WPawn2 = (Piece){ false, false, true, 'P', {1, 1}, 'w', 1, 0, 0, 0, 9 };
+    WPawn3 = (Piece){ false, false, true, 'P', {1, 2}, 'w', 1, 0, 0, 0, 10 };
+    WPawn4 = (Piece){ false, false, true, 'P', {1, 3}, 'w', 1, 0, 0, 0, 11 };
+    WPawn5 = (Piece){ false, false, true, 'P', {1, 4}, 'w', 1, 0, 0, 0, 12 };
+    WPawn6 = (Piece){ false, false, true, 'P', {1, 5}, 'w', 1, 0, 0, 0, 13 };
+    WPawn7 = (Piece){ false, false, true, 'P', {1, 6}, 'w', 1, 0, 0, 0, 14 };
+    WPawn8 = (Piece){ false, false, true, 'P', {1, 7}, 'w', 1, 0, 0, 0, 15 };
 
     WPlayer.PiecesNumber = 16;
 
     WPlayer.tour = 1;
 
-    WPlayer.pieces[0] = WKing;
-    WPlayer.pieces[1] = WQueen;
-    WPlayer.pieces[2] = WRook1;
-    WPlayer.pieces[3] = WRook2;
-    WPlayer.pieces[4] = WBishop1;
+    WPlayer.pieces[0] = WRook1;
+    WPlayer.pieces[1] = WKnight1;
+    WPlayer.pieces[2] = WBishop1;
+    WPlayer.pieces[3] = WQueen;
+    WPlayer.pieces[4] = WKing;
     WPlayer.pieces[5] = WBishop2;
-    WPlayer.pieces[6] = WKnight1;
-    WPlayer.pieces[7] = WKnight2;
+    WPlayer.pieces[6] = WKnight2;
+    WPlayer.pieces[7] = WRook2;
     WPlayer.pieces[8] = WPawn1;
     WPlayer.pieces[9] = WPawn2;
     WPlayer.pieces[10] = WPawn3;
@@ -63,35 +63,35 @@ EXPORT void Initializing(void) {
     WPlayer.pieces[14] = WPawn7;
     WPlayer.pieces[15] = WPawn8;
 
-    BKing = (Piece){ false, false, true, 'K', {7, 4}, 'b', -1, 0, 0, 0 };
-    BQueen = (Piece){ false, false, true, 'Q', {7, 3}, 'b', -1, 0, 0, 0 };
-    BRook1 = (Piece){ false, false, true, 'R', {7, 0}, 'b', -1, 0, 0, 0 };
-    BRook2 = (Piece){ false, false, true, 'R', {7, 7}, 'b', -1, 0, 0, 0 };
-    BBishop1 = (Piece){ false, false, true, 'B', {7, 2}, 'b', -1, 0, 0, 0 };
-    BBishop2 = (Piece){ false, false, true, 'B', {7, 5}, 'b', -1, 0, 0, 0 };
-    BKnight1 = (Piece){ false, false, true, 'N', {7, 1}, 'b', -1, 0, 0, 0 };
-    BKnight2 = (Piece){ false, false, true, 'N', {7, 6}, 'b', -1, 0, 0, 0 };
-    BPawn1 = (Piece){ false, false, true, 'P', {6, 0}, 'b', -1, 0, 0, 0 };
-    BPawn2 = (Piece){ false, false, true, 'P', {6, 1}, 'b', -1, 0, 0, 0 };
-    BPawn3 = (Piece){ false, false, true, 'P', {6, 2}, 'b', -1, 0, 0, 0 };
-    BPawn4 = (Piece){ false, false, true, 'P', {6, 3}, 'b', -1, 0, 0, 0 };
-    BPawn5 = (Piece){ false, false, true, 'P', {6, 4}, 'b', -1, 0, 0, 0 };
-    BPawn6 = (Piece){ false, false, true, 'P', {6, 5}, 'b', -1, 0, 0, 0 };
-    BPawn7 = (Piece){ false, false, true, 'P', {6, 6}, 'b', -1, 0, 0, 0 };
-    BPawn8 = (Piece){ false, false, true, 'P', {6, 7}, 'b', -1, 0, 0, 0 };
+    BRook1 = (Piece){ false, false, true, 'R', {7, 0}, 'b', -1, 0, 0, 0, 0 };
+    BKnight1 = (Piece){ false, false, true, 'N', {7, 1}, 'b', -1, 0, 0, 0, 1 };
+    BBishop1 = (Piece){ false, false, true, 'B', {7, 2}, 'b', -1, 0, 0, 0, 2 };
+    BQueen = (Piece){ false, false, true, 'Q', {7, 3}, 'b', -1, 0, 0, 0, 3 };
+    BKing = (Piece){ false, false, true, 'K', {7, 4}, 'b', -1, 0, 0, 0 , 4 };
+    BBishop2 = (Piece){ false, false, true, 'B', {7, 5}, 'b', -1, 0, 0, 0, 5 };
+    BKnight2 = (Piece){ false, false, true, 'N', {7, 6}, 'b', -1, 0, 0, 0, 6 };
+    BRook2 = (Piece){ false, false, true, 'R', {7, 7}, 'b', -1, 0, 0, 0, 7 };
+    BPawn1 = (Piece){ false, false, true, 'P', {6, 0}, 'b', -1, 0, 0, 0, 8 };
+    BPawn2 = (Piece){ false, false, true, 'P', {6, 1}, 'b', -1, 0, 0, 0, 9 };
+    BPawn3 = (Piece){ false, false, true, 'P', {6, 2}, 'b', -1, 0, 0, 0, 10 };
+    BPawn4 = (Piece){ false, false, true, 'P', {6, 3}, 'b', -1, 0, 0, 0, 11 };
+    BPawn5 = (Piece){ false, false, true, 'P', {6, 4}, 'b', -1, 0, 0, 0, 12 };
+    BPawn6 = (Piece){ false, false, true, 'P', {6, 5}, 'b', -1, 0, 0, 0, 13 };
+    BPawn7 = (Piece){ false, false, true, 'P', {6, 6}, 'b', -1, 0, 0, 0, 14 };
+    BPawn8 = (Piece){ false, false, true, 'P', {6, 7}, 'b', -1, 0, 0, 0, 15 };
 
     BPlayer.PiecesNumber = 16;
 
     BPlayer.tour = 0;
 
-    BPlayer.pieces[0] = BKing;
-    BPlayer.pieces[1] = BQueen;
-    BPlayer.pieces[2] = BRook1;
-    BPlayer.pieces[3] = BRook2;
-    BPlayer.pieces[4] = BBishop1;
+    BPlayer.pieces[0] = BRook1;
+    BPlayer.pieces[1] = BKnight1;
+    BPlayer.pieces[2] = BBishop1;
+    BPlayer.pieces[3] = BQueen;
+    BPlayer.pieces[4] = BKing;
     BPlayer.pieces[5] = BBishop2;
-    BPlayer.pieces[6] = BKnight1;
-    BPlayer.pieces[7] = BKnight2;
+    BPlayer.pieces[6] = BKnight2;
+    BPlayer.pieces[7] = BBishop2;
     BPlayer.pieces[8] = BPawn1;
     BPlayer.pieces[9] = BPawn2;
     BPlayer.pieces[10] = BPawn3;
@@ -590,14 +590,16 @@ void KnightPlayedMoves(PtrPiece knight) {
             x = PossibleMoves[i][0];
             y = PossibleMoves[i][1];
             if (board[x][y]->color == 'd') {
-                int index = knight->numMoves;
+                int index = knight->numMoves++;
                 knight->moves[index][0] = x;
                 knight->moves[index][1] = y;
-                knight->numMoves++;
             }
             else if (board[x][y]->color == OppColor)
             {
-                int index = knight->TakenMovesNum++;
+                int index = knight->numMoves++;
+                knight->moves[index][0] = x;
+                knight->moves[index][1] = y;
+                index = knight->TakenMovesNum++;
                 knight->TakenMoves[index][0] = x;
                 knight->TakenMoves[index][1] = y;
             }
@@ -626,6 +628,8 @@ EXPORT Moves MovesToPlay(int x, int y) {
         break;
     }
     Moves moves;
+    moves.PieceColor = piece->color;
+    moves.PieceIndex = piece->index;
     switch (piece->type)
     {
     case 'P':
@@ -658,25 +662,27 @@ EXPORT Moves MovesToPlay(int x, int y) {
         moves.MovesToP[j++] = piece->moves[i][0];
         moves.MovesToP[j++] = piece->moves[i][1];
     }
+    moves.TakenMovesNumber = piece->TakenMovesNum;
     for (int i = 0; i < 16; i++) {
         moves.TakenMoves[i] = 0;
     }
     j = 0;
     for (int i = 0; i < piece->TakenMovesNum; i++) {
-        moves.TakenMoves[j++] = piece->TakenMoves[i][0];
-        moves.TakenMoves[j++] = piece->TakenMoves[i][1];
+        moves.TakenMoves[i] = board[piece->TakenMoves[i][0]][piece->TakenMoves[i][1]]->index;
     }
     return moves;
 }
 
 EXPORT void CheckMovePlayed(int x, int y, int nx, int ny, bool IsTake) {
     PtrPiece selected_piece = board[x][y];
-    board[nx][ny]->position[0] = -1;
-    board[nx][ny]->position[1] = -1;
-    board[nx][ny]->side = 0;
-    board[nx][ny]->type = 'E';
-    board[nx][ny]->color = 'd';
-    board[nx][ny]->count = 0;
+    if (IsTake) {
+        board[nx][ny]->position[0] = -1;
+        board[nx][ny]->position[1] = -1;
+        board[nx][ny]->side = 0;
+        board[nx][ny]->type = 'E';
+        board[nx][ny]->color = 'd';
+        board[nx][ny]->count = 0;
+    }
     board[nx][ny] = selected_piece;
     board[x][y] = &DefaultPiece;
     selected_piece->position[0] = nx;

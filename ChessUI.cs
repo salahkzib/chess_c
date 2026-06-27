@@ -57,16 +57,41 @@ namespace ChessC
             UnablingSquares();
             Piece UsedPiece = (Piece)sender;
             this.SelectedPiece = (Piece)sender;
-            int[,] SquaresToMoveOn = MovesToPlayIn(UsedPiece.Position);
-            int len = SquaresToMoveOn.GetLength(0);
+            Tuple<int[,], int[], char, int> TuplePiece = MovesToPlayIn(UsedPiece.Position);
+            int[,] AllMoves = TuplePiece.Item1;
+            int[] TakenMoves = TuplePiece.Item2;
+            char color = TuplePiece.Item3;
+            int index = TuplePiece.Item4;
+            int len = AllMoves.GetLength(0);
             int x, y;
             for (int i = 0; i < len; i++)
             {
-                x = SquaresToMoveOn[i, 0];
-                y = SquaresToMoveOn[i, 1];
+                x = AllMoves[i, 0];
+                y = AllMoves[i, 1];
                 this.BoardSquares[x, y].Enabled = true;
                 this.BoardSquares[x, y].BackColor = Color.Green;
                 this.SquareAbled.Add(this.BoardSquares[x, y]);
+            }
+            len = TakenMoves.Length;
+            if(color == 'b')
+            {
+                for (int i = 0; i < len; i++)
+                {
+                    index = TakenMoves[i];
+                    this.WPieces[index].Click -= Piece_Click;
+                    this.WPieces[index].Click += Piece_ToBe_Taked;
+                    this.WPieces[index].BackColor = Color.Green;
+                }
+            }
+            else if(color == 'w')
+            {
+                for (int i = 0; i < len; i++)
+                {
+                    index = TakenMoves[i];
+                    this.BPieces[index].Click -= Piece_Click;
+                    this.BPieces[index].Click += Piece_ToBe_Taked;
+                    this.BPieces[index].BackColor = Color.Green;
+                }
             }
         }
 
@@ -77,7 +102,7 @@ namespace ChessC
             {
                 SelectedPiece.Location = SquareSelected.Location;
                 SelectedPiece.BackColor = SquareSelected.OfficialColor;
-                CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard);
+                CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard, false);
                 SelectedPiece.Position = SquareSelected.IndexInBoard;
                 SelectedPiece.BringToFront();
                 UnablingSquares();
@@ -87,8 +112,14 @@ namespace ChessC
         public void Piece_ToBe_Taked(object sender, EventArgs e)
         {
             Piece piece = (Piece)sender;
-            SelectedPiece.Location = piece.Location;
+            Square SquareSelected = this.BoardSquares[piece.Position[0], piece.Position[1]];
             piece.Hide();
+            SelectedPiece.Location = SquareSelected.Location;
+            SelectedPiece.BackColor = SquareSelected.OfficialColor;
+            CheckingMovePlayed(SelectedPiece.Position, SquareSelected.IndexInBoard, true);
+            SelectedPiece.Position = SquareSelected.IndexInBoard;
+            SelectedPiece.BringToFront();
+            UnablingSquares();
         }
 
         private void UnablingSquares()
