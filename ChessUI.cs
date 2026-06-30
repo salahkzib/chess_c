@@ -35,8 +35,42 @@ namespace ChessC
                     this.BoardSquares[i, j].OfficialColor = this.BoardSquares[i, j].BackColor;
                 }
             }
-            WPieces = new Piece[16] { WRook1, WKnight1, WBishop1, WQueen, WKing, WBishop2, WKnight2, WRook2, WPawn1, WPawn2, WPawn3, WPawn4, WPawn5, WPawn6, WPawn7, WPawn8 };
-            BPieces = new Piece[16] { BRook1, BKnight1, BBishop1, BQueen, BKing, BBishop2, BKnight2, BRook2, BPawn1, BPawn2, BPawn3, BPawn4, BPawn5, BPawn6, BPawn7, BPawn8 };
+            WPieces = new Piece[16];
+            WPieces[0] = WRook1;
+            WPieces[1] = WKnight1;
+            WPieces[2] = WBishop1;
+            WPieces[3] = WQueen;
+            WPieces[4] = WKing;
+            WPieces[5] = WBishop2;
+            WPieces[6] = WKnight2;
+            WPieces[7] = WRook2;
+            WPieces[8] = WPawn1;
+            WPieces[9] = WPawn2;
+            WPieces[10] = WPawn3;
+            WPieces[11] = WPawn4;
+            WPieces[12] = WPawn5;
+            WPieces[13] = WPawn6;
+            WPieces[14] = WPawn7;
+            WPieces[15] = WPawn8;
+
+            BPieces = new Piece[16];
+            BPieces[0] = BRook1;
+            BPieces[1] = BKnight1;
+            BPieces[2] = BBishop1;
+            BPieces[3] = BQueen;
+            BPieces[4] = BKing;
+            BPieces[5] = BBishop2;
+            BPieces[6] = BKnight2;
+            BPieces[7] = BRook2;
+            BPieces[8] = BPawn1;
+            BPieces[9] = BPawn2;
+            BPieces[10] = BPawn3;
+            BPieces[11] = BPawn4;
+            BPieces[12] = BPawn5;
+            BPieces[13] = BPawn6;
+            BPieces[14] = BPawn7;
+            BPieces[15] = BPawn8;
+
             int index = 0;
             for (int i = 0; i < 2; i++)
             {
@@ -57,11 +91,10 @@ namespace ChessC
             UnablingSquares();
             Piece UsedPiece = (Piece)sender;
             this.SelectedPiece = (Piece)sender;
-            Tuple<int[,], int[], char, int> TuplePiece = MovesToPlayIn(UsedPiece.Position);
+            Tuple<int[,], int[], char> TuplePiece = MovesToPlayIn(UsedPiece.Position);
             int[,] AllMoves = TuplePiece.Item1;
             int[] TakenMoves = TuplePiece.Item2;
             char color = TuplePiece.Item3;
-            int index = TuplePiece.Item4;
             int len = AllMoves.GetLength(0);
             int x, y;
             for (int i = 0; i < len; i++)
@@ -73,6 +106,7 @@ namespace ChessC
                 this.SquareAbled.Add(this.BoardSquares[x, y]);
             }
             len = TakenMoves.Length;
+            int index;
             if(color == 'b')
             {
                 for (int i = 0; i < len; i++)

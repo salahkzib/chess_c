@@ -10,7 +10,7 @@ namespace ChessC
         [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern Moves MovesToPlay(int x, int y);
         [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern void CheckMovePlayed(int x, int y, int nx, int ny, bool isTake);
         [DllImport("C:\\Users\\kzibs\\Desktop\\repos\\chess_c\\ProgramC\\ChessProgram.dll", CallingConvention = CallingConvention.Cdecl)] static extern void Initializing();
-        public Tuple<int[,], int[], char, int> MovesToPlayIn(int[] PiecePosition)
+        public Tuple<int[,], int[], char> MovesToPlayIn(int[] PiecePosition)
         {
             int x = PiecePosition[0];
             int y = PiecePosition[1];
@@ -19,8 +19,10 @@ namespace ChessC
             int j = 0;
             for(int i = 0; i < PieceMoves.MovesNumber;i++)
             {
-                AllMoves[i, 0] = PieceMoves.ArrMoves[j++];
-                AllMoves[i, 1] = PieceMoves.ArrMoves[j++];
+                AllMoves[i, 0] = PieceMoves.ArrMoves[j];
+                j++;
+                AllMoves[i, 1] = PieceMoves.ArrMoves[j];
+                j++;
             }
             int[] TakenMoves = new int[PieceMoves.TakenMovesNumber];
             j = 0;
@@ -28,9 +30,8 @@ namespace ChessC
             {
                 TakenMoves[i] = PieceMoves.ArrTakenMoves[i];
             }
-            int index = PieceMoves.PieceIndex;
             char color = PieceMoves.PieceColor;
-            Tuple<int[,], int[], char, int> TuplePiece = new Tuple<int[,], int[], char, int>(AllMoves, TakenMoves, color, index);
+            Tuple<int[,], int[], char> TuplePiece = new Tuple<int[,], int[], char>(AllMoves, TakenMoves, color);
             return TuplePiece;
         }
         public void CheckingMovePlayed(int[] WhereItWas, int[] WhereItIs, bool isTake)
@@ -51,7 +52,6 @@ namespace ChessC
     [StructLayout(LayoutKind.Sequential)] struct Moves
     {
         public char PieceColor;
-        public int PieceIndex;
         public int MovesNumber;
         [MarshalAs(UnmanagedType.ByValArray, SizeConst = 54)] public int[] ArrMoves;
         public int TakenMovesNumber;

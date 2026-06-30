@@ -177,22 +177,20 @@ void PawnPlayedMoves(PtrPiece pawn)
         }
         char OppColor = (pawn->color == 'w') ? 'b' : 'w';
         piece = board[PossibleMoves[2][0]][PossibleMoves[2][1]];
-        if (PossibleMoves[2][0] != -1 && piece->type == OppColor) {
+        if (PossibleMoves[2][0] != -1 && piece->color == OppColor) {
             int index = pawn->numMoves++;
             pawn->moves[index][0] = PossibleMoves[2][0];
             pawn->moves[index][1] = PossibleMoves[2][1];
             index = pawn->TakenMovesNum++;
-            pawn->TakenMoves[index][0] = PossibleMoves[2][0];
-            pawn->TakenMoves[index][1] = PossibleMoves[2][1];
+            pawn->TakenMoves[index] = pawn->index;
         }
         piece = board[PossibleMoves[3][0]][PossibleMoves[3][1]];
-        if (PossibleMoves[3][0] != -1 && piece->type == OppColor) {
+        if (PossibleMoves[3][0] != -1 && piece->color == OppColor) {
             int index = pawn->numMoves++;
             pawn->moves[index][0] = PossibleMoves[3][0];
             pawn->moves[index][1] = PossibleMoves[3][1];
             index = pawn->TakenMovesNum++;
-            pawn->TakenMoves[index][0] = PossibleMoves[3][0];
-            pawn->TakenMoves[index][1] = PossibleMoves[3][1];
+            pawn->TakenMoves[index] = pawn->index;
         }
     }
 }
@@ -275,8 +273,7 @@ void BishopPlayedMoves(PtrPiece bishop) {
                 bishop->moves[index][0] = x;
                 bishop->moves[index][1] = y;
                 index = bishop->TakenMovesNum++;
-                bishop->TakenMoves[index][0] = x;
-                bishop->TakenMoves[index][1] = y;
+                bishop->TakenMoves[index] = bishop->index;
             }
         }
         for (int v = 0; v < PossibleMoves.length; v++)
@@ -427,8 +424,7 @@ void QueenPlayedMoves(PtrPiece queen) {
                 queen->moves[index][0] = x;
                 queen->moves[index][1] = y;
                 index = queen->TakenMovesNum++;
-                queen->TakenMoves[index][0] = x;
-                queen->TakenMoves[index][1] = y;
+                queen->TakenMoves[index] = queen->index;
             }
         }
         for (int v = 0; v < PossibleMoves.length; v++)
@@ -519,8 +515,7 @@ void RookPlayedMoves(PtrPiece rook) {
                 rook->moves[index][0] = x;
                 rook->moves[index][1] = y;
                 index = rook->TakenMovesNum++;
-                rook->TakenMoves[index][0] = x;
-                rook->TakenMoves[index][1] = y;
+                rook->TakenMoves[index] = rook->index;
             }
         }
         for (int v = 0; v < PossibleMoves.length; v++)
@@ -600,8 +595,7 @@ void KnightPlayedMoves(PtrPiece knight) {
                 knight->moves[index][0] = x;
                 knight->moves[index][1] = y;
                 index = knight->TakenMovesNum++;
-                knight->TakenMoves[index][0] = x;
-                knight->TakenMoves[index][1] = y;
+                knight->TakenMoves[index] = knight->index;
             }
         }
     }
@@ -629,7 +623,6 @@ EXPORT Moves MovesToPlay(int x, int y) {
     }
     Moves moves;
     moves.PieceColor = piece->color;
-    moves.PieceIndex = piece->index;
     switch (piece->type)
     {
     case 'P':
@@ -659,16 +652,18 @@ EXPORT Moves MovesToPlay(int x, int y) {
     }
     int j = 0;
     for (int i = 0; i < piece->numMoves; i++) {
-        moves.MovesToP[j++] = piece->moves[i][0];
-        moves.MovesToP[j++] = piece->moves[i][1];
+        moves.MovesToP[j] = piece->moves[i][0];
+        j++;
+        moves.MovesToP[j] = piece->moves[i][1];
+        j++;
     }
     moves.TakenMovesNumber = piece->TakenMovesNum;
-    for (int i = 0; i < 16; i++) {
+    for (int i = 0; i < 8; i++) {
         moves.TakenMoves[i] = 0;
     }
     j = 0;
     for (int i = 0; i < piece->TakenMovesNum; i++) {
-        moves.TakenMoves[i] = board[piece->TakenMoves[i][0]][piece->TakenMoves[i][1]]->index;
+        moves.TakenMoves[i] = piece->TakenMoves[i];
     }
     return moves;
 }
@@ -693,8 +688,7 @@ EXPORT void CheckMovePlayed(int x, int y, int nx, int ny, bool IsTake) {
         selected_piece->moves[i][1] = 0;
     }
     for (int i = 0; i < selected_piece->TakenMovesNum; i++) {
-        selected_piece->TakenMoves[i][0] = 0;
-        selected_piece->TakenMoves[i][1] = 0;
+        selected_piece->TakenMoves[i] = 0;
     }
     selected_piece->numMoves = 0;
     selected_piece->TakenMovesNum = 0;

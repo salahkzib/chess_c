@@ -12,8 +12,10 @@ int main() {
         printf("%d, %d\n", x, y);
         if (x != -1 | y != -1) {
             Moves moves = MovesToPlay(x, y);
-            for (int i = 0; i < moves.MovesNumber; i++) {
-                printf("possible move : x = %d, y = %d\n", moves.MovesToP[i++], moves.MovesToP[i]);
+            for (int i = 0; i < moves.MovesNumber * 2; i++) {
+                printf("possible move : x = %d", moves.MovesToP[i]);
+                i++;
+                printf(", y = %d\n", moves.MovesToP[i]);
             }
             for (int i = 0; i < moves.TakenMovesNumber; i++) {
                 printf("move to take in index : %d\n", moves.TakenMoves[i]);
